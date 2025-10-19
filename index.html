@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILY PRODUCTIONS - Portafolio Audiovisual</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#inicio" class="logo-link">
+                <img src="LOGO_MILY[1].png" alt="MILY PRODUCTIONS Logo" class="logo-img">
+                
+                <div class="logo-text">
+                    MILY PRODUCTIONS
+                </div>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <ul class="nav-menu"> <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto">Conectar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero fullscreen-visual">
+            <div class="hero-content">
+                </div>
+        </section>
+
+        <section id="portafolio" class="seccion seccion-portafolio">
+            <h2>NUESTRO PORTAFOLIO</h2>
+            <p class="subtitulo">Una muestra de la calidad y la narrativa visual de MILY PRODUCTIONS.</p>
+            
+            <div class="video-grid">
+                
+                <div class="video-item">
+                    <video controls width="100%" preload="metadata" poster="miniaturas/corazon_subtropical.jpg">
+                        <source src="mi-video-portafolio.mp4" type="video/mp4">
+                        Tu navegador no soporta el tag de video HTML5.
+                    </video>
+                    <h3>Corazón Subtropical</h3>
+                    <p class="ficha-tecnica">Promocional | Balzapamba | Aventura.</p>
+                </div>
+
+                <div class="video-item">
+                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_1.jpg">
+                        <source src="otro-video-1.mp4" type="video/mp4">
+                        Tu navegador no soporta el tag de video HTML5.
+                    </video>
+                    <h3>Título de Video Adicional</h3>
+                    <p class="ficha-tecnica">Documental Corto | Gastronomía Local.</p>
+                </div>
+
+                <div class="video-item">
+                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_2.jpg">
+                        <source src="otro-video-2.mp4" type="video/mp4">
+                        Tu navegador no soporta el tag de video HTML5.
+                    </video>
+                    <h3>Tradiciones Vivas</h3>
+                    <p class="ficha-tecnica">Documental | Cultura y Historia.</p>
+                </div>
+
+                <div class="video-item">
+                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_3.jpg">
+                        <source src="otro-video-3.mp4" type="video/mp4">
+                        Tu navegador no soporta el tag de video HTML5.
+                    </video>
+                    <h3>Balzapamba: Tu Destino</h3>
+                    <p class="ficha-tecnica">Resumen | Llamada a la Acción.</p>
+                </div>
+                <div class="video-item">
+                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_4.jpg">
+                        <source src="otro-video-4.mp4" type="video/mp4">
+                        Tu navegador no soporta el tag de video HTML5.
+                    </video>
+                    <h3>[Título de Video Adicional]</h3>
+                    <p class="ficha-tecnica">Ejemplo | Cortometraje.</p>
+                </div>
+                <div class="video-item">
+                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_5.jpg">
+                        <source src="otro-video-5.mp4" type="video/mp4">
+                        Tu navegador no soporta el tag de video HTML5.
+                    </video>
+                    <h3>[Título de Video Adicional 2]</h3>
+                    <p class="ficha-tecnica">Ejemplo | Eventos.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ubicacion" class="seccion seccion-info">
+            <h2>LOCACIONES CLAVE</h2>
+            <div class="destacado-container">
+                
+                <div class="destacado-card card-mapa">
+                    <h3>MAPA INTERACTIVO</h3>
+                    <p>Balzapamba: la provincia de Bolívar, conectando la sierra con la costa.</p>
+                    <div class="mapa-iframe">
+                        <iframe 
+                            src="https://maps.google.com/maps?width=100%25&height=600&hl=es&q=Balzapamba,%20Ecuador&t=&z=13&ie=UTF8&iwloc=B&output=embed"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/place/Balzapamba" target="_blank" class="btn-acento">VER EN GOOGLE MAPS</a>
+                </div>
+                
+                <div class="destacado-card card-campo">
+                    <h3>GALERÍA DE CAMPO</h3>
+                    <p>Una muestra de las locaciones clave: Río Cristal, Cascada Milagrosa y el Museo Bastión Andino.</p>
+                    
+                    <div class="galeria-fotos">
+                        <figure>
+                            <a href="#" onclick="openLightbox('FOTO 2.jpg', 'Río Cristal'); return false;">
+                                <img src="FOTO 2.jpg" alt="Río Cristal Balzapamba" class="foto-galeria">
+                            </a>
+                            <figcaption>Río Cristal</figcaption>
+                        </figure>
+
+                        <figure>
+                            <a href="#" onclick="openLightbox('FOTO 3.jpg', 'Cascada Milagrosa'); return false;">
+                                <img src="FOTO 3.jpg" alt="Cascada Milagrosa Balzapamba" class="foto-galeria">
+                            </a>
+                            <figcaption>Cascada Milagrosa</figcaption>
+                        </figure>
+
+                        <figure>
+                            <a href="#" onclick="openLightbox('FOTO 4.jpg', 'Museo Bastión Andino'); return false;">
+                                <img src="FOTO 4.jpg" alt="Museo Bastión Andino" class="foto-galeria">
+                            </a>
+                            <figcaption>Museo Bastión Andino</figcaption>
+                        </figure>
+                    </div>
+                    
+                    <a href="#" class="btn-acento">VER MÁS FOTOS</a>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="contacto" class="seccion seccion-connect">
+            <h2>CONECTEMOS</h2>
+            <p class="subtitulo">Estamos listos para contar tu próxima historia.</p>
+            <p class="email-contacto">Email: <a href="mailto:alombiedah3@unemi.edu.ec">alombiedah3@unemi.edu.ec</a></p>
+<<<<<<< HEAD
+            <p class="creditos">Angelly Lombeida de Nelson Sanchez  | MILY PRODUCTIONS [2025]</p>
+=======
+            <p class="creditos">Angelly Lombeida de Nelson Sanchez | MILY PRODUCTIONS [2025]</p>
+>>>>>>> d4c884a326c016a892761b5349f3948a6889021f
+        </section>
+    </main>
+    
+    <div id="lightbox-modal" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightbox-image">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 MILY PRODUCTIONS. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

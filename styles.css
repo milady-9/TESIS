@@ -1,0 +1,635 @@
+/* VARIABLES Y RESET BÁSICO (DARK MODE) */
+:root {
+    --color-principal: #FF6B6B; /* Coral Vibrante (Acento, Hover) */
+    --color-fondo: #1A1A1A; /* Negro Profundo (Fondo principal) */
+    --color-card: #282828; /* Gris Carbón (Fondo de tarjetas) */
+    --color-texto-claro: #F0F0F0; /* Blanco Suave (Texto principal) */
+    --color-acento-fuerte: #7B1FA2; /* Amatista (Títulos de sección) */
+    --font-principal: 'Montserrat', sans-serif;
+    --font-logo: 'Cinzel', serif; /* Nueva fuente para el logo */
+    --sombra-card: 0 8px 30px rgba(0, 0, 0, 0.4); /* Sombra pesada para profundidad */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-principal);
+    line-height: 1.6;
+    color: var(--color-texto-claro);
+    background-color: var(--color-fondo);
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+/* -------------------------------------------------------------------------- */
+/* ENCABEZADO Y NAVEGACIÓN (ESCRITORIO) */
+/* -------------------------------------------------------------------------- */
+header {
+    background: transparent;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out; 
+}
+
+header.scrolled {
+    background-color: rgba(26, 26, 26, 0.95); /* Más opaco al hacer scroll */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 30px 1.5rem 100px; /* Ajuste de padding para el nav */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center; 
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-img {
+    height: 80px; 
+    width: auto;
+    margin-right: 15px; 
+}
+
+.logo-text {
+    font-family: var(--font-logo); 
+    font-size: 1.8rem; 
+    font-weight: 400; 
+    color: var(--color-texto-claro);
+    letter-spacing: 5px; 
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.9); 
+    white-space: nowrap; 
+    margin-top: 5px; 
+}
+
+.logo-text strong { 
+    color: var(--color-principal); 
+    font-weight: 900; 
+    margin-left: 8px; 
+    letter-spacing: 2px;
+}
+
+/* Estilos de escritorio: el menú es horizontal */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    font-weight: 400;
+}
+
+.nav-menu li a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    padding: 0.7rem 1.4rem; 
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+    font-size: 1.05rem; 
+    letter-spacing: 1px;
+}
+
+.nav-menu li a:hover {
+    color: var(--color-principal);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* -------------------------------------------------------------------------- */
+/* ICONO HAMBURGUESA (OCULTO POR DEFECTO) */
+/* -------------------------------------------------------------------------- */
+.menu-toggle {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px auto;
+    background-color: var(--color-texto-claro); /* Usar color de texto claro para las barras */
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* SECCIONES Y COMPONENTES GENERALES */
+/* -------------------------------------------------------------------------- */
+
+.fullscreen-visual {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('LOGO.png'); 
+    background-size: cover;
+    background-position: right center;
+    background-attachment: fixed; /* Esto es para escritorio, para el efecto Parallax */
+    background-repeat: no-repeat;
+    /* Sombras para un efecto de profundidad al inicio de las secciones */
+    box-shadow: inset 0 -100px 50px -50px var(--color-fondo); 
+}
+
+/* Estilos para el contenido principal del hero (h1) */
+.hero-content {
+    text-align: center;
+    padding: 20px;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-logo);
+    font-size: 4.5rem; /* Tamaño grande para el título principal */
+    color: var(--color-texto-claro);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(var(--color-principal-rgb), 0.5); /* Agrega sombra sutil */
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.seccion {
+    padding: 100px 30px; /* Padding vertical y horizontal */
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+.seccion h2 {
+    font-size: 3rem; 
+    margin-bottom: 10px;
+    color: var(--color-acento-fuerte); 
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    color: #AAAAAA;
+    font-weight: 300;
+}
+
+/* PORTFOLIO GRID */
+.video-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    justify-content: center; /* Centra los elementos si no llenan el espacio */
+}
+
+.video-item {
+    background-color: var(--color-card);
+    border-radius: 10px;
+    box-shadow: var(--sombra-card);
+    overflow: hidden; 
+    transition: transform 0.4s, box-shadow 0.4s;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.video-item:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); 
+}
+
+/* IMPORTANTE: Aplica estilos tanto a iframe (mapa) como a VIDEO (portafolio) */
+.video-item video {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    border-radius: 10px 10px 0 0; 
+    display: block;
+    object-fit: cover; /* Asegura que el video llene el espacio sin distorsión */
+}
+
+
+.video-item h3 {
+    padding: 20px 20px 5px;
+    color: var(--color-principal);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.ficha-tecnica {
+    padding: 0 20px 20px;
+    font-size: 0.9rem;
+    color: #888888;
+}
+
+/* UBICACIÓN Y TARJETAS */
+.seccion-info {
+    background-color: var(--color-card); /* Le da un fondo distinto a esta sección */
+}
+
+.destacado-container {
+    display: flex;
+    gap: 50px; 
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+    margin-top: 30px;
+}
+
+.destacado-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 10px; 
+    color: var(--color-texto-claro);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s;
+}
+
+.card-mapa {
+    background-image: none;
+    background-color: white; /* Fondo blanco para el mapa */
+    color: var(--color-fondo); /* Texto negro sobre fondo blanco */
+    box-shadow: var(--sombra-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-mapa h3 {
+    color: var(--color-principal); /* Título del mapa en color principal */
+    text-shadow: none;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+.mapa-iframe {
+    width: 100%;
+    height: 300px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px 0;
+}
+.mapa-iframe iframe {
+    width: 100%;
+    height: 100%;
+    display: block; /* Asegura que no haya espacios extra */
+    border: none; /* Elimina el borde por defecto del iframe */
+}
+
+
+.card-campo {
+    /* Eliminamos la imagen de fondo de aquí para que la galería se vea mejor */
+    background-image: none; 
+    background-color: var(--color-card); /* Usamos el color de tarjeta para este fondo */
+    justify-content: flex-start; /* Alinea el contenido al inicio de la tarjeta */
+    padding-top: 40px; /* Asegura un padding superior consistente */
+}
+
+.card-campo h3 {
+    font-size: 2.5rem;
+    color: var(--color-principal);
+    margin-bottom: 10px; /* Espacio para el subtítulo */
+}
+/* Subtítulo específico para la tarjeta de campo si lo deseas */
+.card-campo p {
+    font-size: 1rem;
+    color: #AAAAAA;
+    margin-bottom: 25px;
+}
+
+
+/* GALERÍA DE CAMPO (NUEVOS ESTILOS) */
+.galeria-fotos {
+    display: grid;
+    /* Organiza las fotos en 3 columnas iguales, responsivas */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 15px;
+    margin: 25px 0 40px; /* Espaciado alrededor de la cuadrícula */
+}
+
+.galeria-fotos figure {
+    background-color: #111; /* Fondo oscuro para cada figura */
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer; /* Indica que son clickeables */
+    transition: transform 0.3s ease-in-out;
+}
+
+.galeria-fotos figure:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento al pasar el ratón */
+}
+
+.galeria-fotos .foto-galeria {
+    width: 100%;
+    height: 120px; /* Altura fija para un aspecto uniforme */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    transition: transform 0.3s;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.galeria-fotos figure:hover .foto-galeria {
+    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+}
+
+.galeria-fotos figcaption {
+    font-size: 0.85rem;
+    color: var(--color-principal);
+    padding: 8px 5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* BOTONES Y CONTACTO */
+.btn-acento {
+    display: inline-block;
+    background: var(--color-principal);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    margin-top: 20px; /* Espacio superior para el botón */
+}
+
+.btn-acento:hover {
+    background: #FF4747; /* Un tono un poco más oscuro al hacer hover */
+    transform: translateY(-2px);
+}
+
+.email-contacto {
+    margin: 30px 0 40px;
+}
+
+.email-contacto a {
+    color: var(--color-principal);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.email-contacto a:hover {
+    color: #FF4747; /* Hover para el email */
+    text-decoration: underline;
+}
+
+/* CRÉDITOS */
+.creditos {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--color-fondo);
+    color: #555;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+/* -------------------------------------------------------------------------- */
+/* LIGHTBOX (MODAL DE FOTOS) */
+/* -------------------------------------------------------------------------- */
+
+.lightbox {
+    display: none; /* Oculto por defecto, se muestra con JS */
+    position: fixed; 
+    z-index: 2000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite scroll si la imagen es muy grande */
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo muy oscuro con transparencia */
+    /* Transition de opacidad para una apertura y cierre suaves */
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+    /* Para centrar el contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* Permite interactuar con elementos debajo cuando no está visible */
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto; /* Habilita interacción cuando está activo */
+}
+
+.lightbox-content {
+    position: relative;
+    padding: 20px; /* Espacio alrededor de la imagen y pie de foto */
+    width: 90%; 
+    max-width: 1200px;
+    text-align: center;
+    cursor: default; /* El contenido no tiene el cursor de cierre */
+    background-color: transparent; /* El fondo lo da el .lightbox */
+    border-radius: 10px;
+}
+
+.lightbox-image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 85vh; /* Máximo 85% de la altura de la ventana */
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+    /* Animación de entrada */
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.lightbox.active .lightbox-image {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 60px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: var(--color-principal); /* Color de acento al pasar el mouse */
+}
+
+.lightbox-caption {
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    word-wrap: break-word; /* Asegura que textos largos se ajusten */
+}
+
+/* -------------------------------------------------------------------------- */
+/* MEDIA QUERIES (Responsivo - Pantallas Pequeñas) */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    
+    .fullscreen-visual {
+        background-attachment: scroll; /* No parallax en móvil */
+        background-position: center center; 
+    }
+
+    .hero-content h1 {
+        font-size: 3rem; /* Ajuste para el título principal en móvil */
+    }
+
+    /* 1. NAVEGACIÓN Y HAMBURGUESA */
+    
+    nav {
+        padding: 1rem 20px; /* Padding ajustado para móvil */
+    }
+
+    .menu-toggle {
+        display: block; /* Visible en móvil */
+    }
+    
+    /* El menú en móvil se apila verticalmente */
+    .nav-menu {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Se posiciona debajo del header */
+        left: 0;
+        background-color: var(--color-card); 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 0;
+        max-height: 0; /* Para la animación de apertura */
+        overflow: hidden; /* Oculta el contenido extra */
+        transition: max-height 0.3s ease-out; /* Transición suave */
+    }
+
+    .nav-menu.active { /* Renombrado de 'open' a 'active' para consistencia con JS */
+        max-height: 300px; /* Altura máxima para mostrar el menú, ajustar si hay más elementos */
+        display: flex; /* Asegura que se muestre como flex column */
+    }
+
+    .nav-menu li {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 1rem 20px;
+        font-size: 1.1rem;
+        border-radius: 0;
+    }
+    
+    /* 2. LOGO EN MÓVIL */
+    .logo-img {
+        height: 50px; /* Logo un poco más pequeño en móvil */
+        margin-right: 10px; 
+    }
+    .logo-text {
+        font-size: 1.2rem; /* Texto del logo más pequeño */
+        letter-spacing: 2px; 
+        margin-top: 0;
+    }
+    .logo-text strong {
+        font-size: 1.2rem;
+        margin-left: 3px;
+        letter-spacing: 0.5px;
+    }
+
+
+    /* 3. AJUSTES GENERALES */
+    
+    .seccion {
+        padding: 60px 20px; /* Padding de sección ajustado */
+    }
+    .seccion h2 {
+        font-size: 2.2rem; /* Títulos de sección más pequeños */
+    }
+    .subtitulo {
+        font-size: 1rem;
+        margin-bottom: 30px; 
+    }
+    .video-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 25px;
+    }
+    .destacado-card {
+        width: 100%;
+        max-width: none;
+        padding: 30px 20px;
+        min-height: auto; /* Altura automática en móvil */
+    }
+
+    .email-contacto a {
+        font-size: 1.2rem; /* Email de contacto más pequeño */
+    }
+
+    /* Ajustes para la galería de fotos en móvil */
+    .galeria-fotos {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* 2 o 3 fotos pequeñas */
+        gap: 10px;
+    }
+    .galeria-fotos .foto-galeria {
+        height: 80px; /* Altura más pequeña para fotos en móvil */
+    }
+    .galeria-fotos figcaption {
+        font-size: 0.75rem; /* Letra más pequeña para las leyendas */
+    }
+
+}
+
+/* MEDIA QUERY PARA EL LIGHTBOX EN MÓVIL */
+@media (max-width: 768px) {
+    .lightbox-close {
+        font-size: 40px;
+        top: 10px;
+        right: 15px;
+    }
+    .lightbox-content {
+        margin: 15% auto; /* Ajuste para el centrado del contenido del lightbox en móvil */
+        padding: 10px;
+    }
+    .lightbox-image {
+        max-height: 75vh; /* Ajuste para la altura de la imagen en el lightbox en móvil */
+    }
+    .lightbox-caption {
+        font-size: 1rem;
+    }
+}
