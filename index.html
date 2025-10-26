@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 </head>
 <body>
 
@@ -26,10 +27,12 @@
                 <span class="bar"></span>
             </button>
             
-            <ul class="nav-menu"> <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="#contacto">Conectar</a></li>
+            <ul class="nav-menu"> 
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#mision">Misión</a></li>
+                <li><a href="#portafolio">Trabajos</a></li>
+                <li><a href="#experiencia">Campo</a></li>
+                <li><a href="#contacto">Contacto</a></li> 
             </ul>
         </nav>
     </header>
@@ -37,137 +40,206 @@
     <main>
         <section id="inicio" class="hero fullscreen-visual">
             <div class="hero-content">
+                <h1>LA HISTORIA DE TU VISIÓN</h1>
+                <p>Somos MILY PRODUCTIONS, donde cada fotograma cuenta una narrativa épica. Creando cine, documentales y campañas impactantes en Balzapamba y más allá.</p>
+                <a href="#portafolio" class="btn-principal">VER TRABAJOS DESTACADOS</a>
                 </div>
+        </section>
+        
+        <section id="mision" class="seccion seccion-mision">
+            <div class="seccion-content">
+                <h2>NUESTRA FILOSOFÍA: EL IMPACTO VISUAL</h2>
+                <p class="subtitulo">Transformamos ideas en experiencias inmersivas. Descubre lo que nos impulsa.</p>
+
+                <div class="mision-grid">
+                    <div class="mision-item">
+                        <i class="fas fa-camera-retro"></i>
+                        <h3>CINEMATOGRAFÍA DE AUTOR</h3>
+                        <p>Cada proyecto es tratado con una visión artística única, garantizando una estética de alto nivel cinematográfico.</p>
+                    </div>
+                    <div class="mision-item">
+                        <i class="fas fa-mountain"></i>
+                        <h3>CONOCIMIENTO DE CAMPO</h3>
+                        <p>Expertos en filmar en Balzapamba y locaciones complejas, asegurando la logística y la seguridad del equipo.</p>
+                    </div>
+                    <div class="mision-item">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <h3>POST-PRODUCCIÓN PRECISA</h3>
+                        <p>Un flujo de trabajo meticuloso en edición, colorización y sonido para entregar un producto final pulido y profesional.</p>
+                    </div>
+                </div>
+                <a href="#contacto" class="btn-principal">EMPEZAR TU PROYECTO</a>
+            </div>
         </section>
 
         <section id="portafolio" class="seccion seccion-portafolio">
-            <h2>NUESTRO PORTAFOLIO</h2>
-            <p class="subtitulo">Una muestra de la calidad y la narrativa visual de MILY PRODUCTIONS.</p>
-            
-            <div class="video-grid">
+            <div class="seccion-content">
+                <h2>PORTAFOLIO EN FOCO</h2>
+                <p class="subtitulo">Una selección de proyectos que definen nuestra identidad visual.</p>
                 
-                <div class="video-item">
-                    <video controls width="100%" preload="metadata" poster="miniaturas/corazon_subtropical.jpg">
-                        <source src="mi-video-portafolio.mp4" type="video/mp4">
-                        Tu navegador no soporta el tag de video HTML5.
-                    </video>
-                    <h3>Corazón Subtropical</h3>
-                    <p class="ficha-tecnica">Promocional | Balzapamba | Aventura.</p>
-                </div>
+                <div class="portafolio-list">
 
-                <div class="video-item">
-                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_1.jpg">
-                        <source src="otro-video-1.mp4" type="video/mp4">
-                        Tu navegador no soporta el tag de video HTML5.
-                    </video>
-                    <h3>Título de Video Adicional</h3>
-                    <p class="ficha-tecnica">Documental Corto | Gastronomía Local.</p>
-                </div>
-
-                <div class="video-item">
-                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_2.jpg">
-                        <source src="otro-video-2.mp4" type="video/mp4">
-                        Tu navegador no soporta el tag de video HTML5.
-                    </video>
-                    <h3>Tradiciones Vivas</h3>
-                    <p class="ficha-tecnica">Documental | Cultura y Historia.</p>
-                </div>
-
-                <div class="video-item">
-                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_3.jpg">
-                        <source src="otro-video-3.mp4" type="video/mp4">
-                        Tu navegador no soporta el tag de video HTML5.
-                    </video>
-                    <h3>Balzapamba: Tu Destino</h3>
-                    <p class="ficha-tecnica">Resumen | Llamada a la Acción.</p>
-                </div>
-                <div class="video-item">
-                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_4.jpg">
-                        <source src="otro-video-4.mp4" type="video/mp4">
-                        Tu navegador no soporta el tag de video HTML5.
-                    </video>
-                    <h3>[Título de Video Adicional]</h3>
-                    <p class="ficha-tecnica">Ejemplo | Cortometraje.</p>
-                </div>
-                <div class="video-item">
-                    <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_5.jpg">
-                        <source src="otro-video-5.mp4" type="video/mp4">
-                        Tu navegador no soporta el tag de video HTML5.
-                    </video>
-                    <h3>[Título de Video Adicional 2]</h3>
-                    <p class="ficha-tecnica">Ejemplo | Eventos.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="ubicacion" class="seccion seccion-info">
-            <h2>LOCACIONES CLAVE</h2>
-            <div class="destacado-container">
-                
-                <div class="destacado-card card-mapa">
-                    <h3>MAPA INTERACTIVO</h3>
-                    <p>Balzapamba: la provincia de Bolívar, conectando la sierra con la costa.</p>
-                    <div class="mapa-iframe">
-                        <iframe 
-                            src="https://maps.google.com/maps?width=100%25&height=600&hl=es&q=Balzapamba,%20Ecuador&t=&z=13&ie=UTF8&iwloc=B&output=embed"
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <div class="project-block large-block">
+                        <video controls width="100%" preload="metadata" poster="miniaturas/corazon_subtropical.jpg">
+                            <source src="mi-video-portafolio.mp4" type="video/mp4">
+                        </video>
+                        <div class="project-info">
+                            <h3>01. CORAZÓN SUBTROPICAL (Destacado)</h3>
+                            <p>Un cortometraje que captura la esencia de la vida y el paisaje de Balzapamba, fusionando aventura y cultura. Este proyecto fue premiado por su cinematografía.</p>
+                            <span class="tag">Cortometraje</span>
+                            <span class="tag">Cine</span>
+                        </div>
                     </div>
-                    <a href="https://www.google.com/maps/place/Balzapamba" target="_blank" class="btn-acento">VER EN GOOGLE MAPS</a>
+
+                    <div class="project-block small-block">
+                         <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_1.jpg">
+                            <source src="otro-video-1.mp4" type="video/mp4">
+                        </video>
+                        <div class="project-info">
+                            <h3>02. Tradiciones Vivas</h3>
+                            <p>Documental sobre la gastronomía local y su legado ancestral.</p>
+                            <span class="tag">Documental</span>
+                            <span class="tag">Cultura</span>
+                        </div>
+                    </div>
+
+                    <div class="project-block small-block">
+                         <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_2.jpg">
+                            <source src="otro-video-2.mp4" type="video/mp4">
+                        </video>
+                        <div class="project-info">
+                            <h3>03. Balzapamba: Tu Destino</h3>
+                            <p>Campaña promocional de alto impacto para el sector turístico.</p>
+                            <span class="tag">Comercial</span>
+                            <span class="tag">Promoción</span>
+                        </div>
+                    </div>
+
+                    <div class="project-block large-block">
+                         <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_3.jpg">
+                            <source src="otro-video-3.mp4" type="video/mp4">
+                        </video>
+                        <div class="project-info">
+                            <h3>04. Río y Cordillera (Behind the Scenes)</h3>
+                            <p>Un vistazo íntimo a nuestro proceso de producción en locaciones extremas.</p>
+                            <span class="tag">Detrás de Cámaras</span>
+                            <span class="tag">Proceso</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="destacado-card card-campo">
-                    <h3>GALERÍA DE CAMPO</h3>
-                    <p>Una muestra de las locaciones clave: Río Cristal, Cascada Milagrosa y el Museo Bastión Andino.</p>
-                    
-                    <div class="galeria-fotos">
-                        <figure>
-                            <a href="#" onclick="openLightbox('FOTO 2.jpg', 'Río Cristal'); return false;">
-                                <img src="FOTO 2.jpg" alt="Río Cristal Balzapamba" class="foto-galeria">
-                            </a>
-                            <figcaption>Río Cristal</figcaption>
-                        </figure>
-
-                        <figure>
-                            <a href="#" onclick="openLightbox('FOTO 3.jpg', 'Cascada Milagrosa'); return false;">
-                                <img src="FOTO 3.jpg" alt="Cascada Milagrosa Balzapamba" class="foto-galeria">
-                            </a>
-                            <figcaption>Cascada Milagrosa</figcaption>
-                        </figure>
-
-                        <figure>
-                            <a href="#" onclick="openLightbox('FOTO 4.jpg', 'Museo Bastión Andino'); return false;">
-                                <img src="FOTO 4.jpg" alt="Museo Bastión Andino" class="foto-galeria">
-                            </a>
-                            <figcaption>Museo Bastión Andino</figcaption>
-                        </figure>
-                    </div>
-                    
-                    <a href="#" class="btn-acento">VER MÁS FOTOS</a>
-                </div>
+                <a href="#" class="btn-principal btn-centrado">VER ARCHIVO COMPLETO</a>
 
             </div>
         </section>
         
-        <section id="contacto" class="seccion seccion-connect">
-            <h2>CONECTEMOS</h2>
-            <p class="subtitulo">Estamos listos para contar tu próxima historia.</p>
-            <p class="email-contacto">Email: <a href="mailto:alombiedah3@unemi.edu.ec">alombiedah3@unemi.edu.ec</a></p>
-<<<<<<< HEAD
-            <p class="creditos">Angelly Lombeida de Nelson Sanchez  | MILY PRODUCTIONS [2025]</p>
-=======
-            <p class="creditos">Angelly Lombeida de Nelson Sanchez | MILY PRODUCTIONS [2025]</p>
->>>>>>> d4c884a326c016a892761b5349f3948a6889021f
+        <section id="experiencia" class="seccion seccion-info parallax-bg">
+            <div class="seccion-content">
+                <h2>NUESTRA EXPERIENCIA EN CAMPO</h2>
+                <p class="subtitulo">Conocemos las locaciones más impresionantes para tu proyecto.</p>
+
+                <div class="experiencia-grid">
+                    
+                    <div class="grid-item mapa-container">
+                        <h3>Locaciones Clave: Mapa Interactivo</h3>
+                        <p>Descubre dónde hemos filmado. Balzapamba: la provincia de Bolívar, conectando la sierra con la costa.</p>
+                        <div class="mapa-iframe">
+                            <iframe 
+                                src="https://maps.google.com/maps?width=100%25&height=600&hl=es&q=Balzapamba,%20Ecuador&t=&z=13&ie=UTF8&iwloc=B&output=embed"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <a href="https://www.google.com/maps/place/Balzapamba" target="_blank" class="btn-secundario">ABRIR EN GOOGLE MAPS</a>
+                    </div>
+                    
+                    <div class="grid-item galeria-container">
+                        <h3>Galería de Campo</h3>
+                        <div class="galeria-fotos">
+                            <figure>
+                                <a href="#" onclick="openLightbox('FOTO 2.jpg', 'Río Cristal - Balzapamba'); return false;">
+                                    <img src="FOTO 2.jpg" alt="Río Cristal Balzapamba" class="foto-galeria">
+                                </a>
+                                <figcaption>Río Cristal</figcaption>
+                            </figure>
+    
+                            <figure>
+                                <a href="#" onclick="openLightbox('FOTO 3.jpg', 'Cascada Milagrosa'); return false;">
+                                    <img src="FOTO 3.jpg" alt="Cascada Milagrosa Balzapamba" class="foto-galeria">
+                                </a>
+                                <figcaption>Cascada Milagrosa</figcaption>
+                            </figure>
+    
+                            <figure>
+                                <a href="#" onclick="openLightbox('FOTO 4.jpg', 'Museo Bastión Andino'); return false;">
+                                    <img src="FOTO 4.jpg" alt="Museo Bastión Andino" class="foto-galeria">
+                                </a>
+                                <figcaption>Museo Andino</figcaption>
+                            </figure>
+                            <figure>
+                                <a href="#" onclick="openLightbox('FOTO 5.jpg', 'Atardecer en la Sierra'); return false;">
+                                    <img src="miniaturas/atardecer.jpg" alt="Atardecer en la Sierra" class="foto-galeria">
+                                </a>
+                                <figcaption>Atardecer Andino</figcaption>
+                            </figure>
+                        </div>
+                        <p class="nota-galeria">Haga clic en las imágenes para ampliar la vista.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacto" class="seccion seccion-connect parallax-bg final-cta">
+            <div class="seccion-content">
+                <h2>PREPÁRATE PARA FILMAR</h2>
+                <p class="subtitulo">Llevamos tu concepto de la idea a la pantalla grande. Hablemos de tu proyecto.</p>
+                
+                <div class="contact-layout">
+                    
+                    <div class="contact-info-block">
+                        <h3>Información Clave</h3>
+                        <p>Nuestro equipo está listo para responder tus consultas y discutir las bases de tu visión.</p>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>Email principal:<br><a href="mailto:alombiedah3@unemi.edu.ec">alombiedah3@unemi.edu.ec</a></p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Base de Operaciones:<br>Balzapamba, Provincia de Bolívar, Ecuador.</p>
+                        </div>
+                        
+                        <div class="social-links large-links">
+                            <a href="https://facebook.com/milysproductions" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/milysproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/milysproductions" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-block">
+                        <h3>Envíanos un Mensaje Rápido</h3>
+                        <form action="#" method="POST" class="contact-form">
+                            <input type="text" name="name" placeholder="Tu Nombre Completo" required>
+                            <input type="email" name="email" placeholder="Tu Email" required>
+                            <input type="text" name="subject" placeholder="Asunto del Proyecto" required>
+                            <textarea name="message" rows="5" placeholder="Cuéntanos tu idea..." required></textarea>
+                            <button type="submit" class="btn-principal">ENVIAR PROPUESTA</button>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
         </section>
     </main>
     
     <div id="lightbox-modal" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-close">×</span>
         <div class="lightbox-content">
             <img class="lightbox-image" id="lightbox-image">
             <div class="lightbox-caption" id="lightbox-caption"></div>
@@ -175,6 +247,7 @@
     </div>
 
     <footer>
+        <p class="creditos-footer">Angelly Lombeida de Nelson Sanchez | MILY PRODUCTIONS [2025]</p>
         <p>© 2025 MILY PRODUCTIONS. Todos los derechos reservados.</p>
     </footer>
 
