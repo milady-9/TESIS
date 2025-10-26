@@ -1,13 +1,17 @@
 /* VARIABLES Y RESET BÁSICO (DARK MODE) */
 :root {
-    --color-principal: #FF6B6B; /* Coral Vibrante (Acento, Hover) */
+    /* Paleta Original Restaurada */
+    --color-principal: #07C4EF; /* Cyan Brillante (Acento, Hover) */
     --color-fondo: #121212; /* Negro Ultra Profundo (Fondo principal) */
     --color-card: #1E1E1E; /* Gris Oscuro (Fondo de tarjetas) */
     --color-texto-claro: #E0E0E0; /* Blanco Suave (Texto principal) */
-    --color-acento-fuerte: #7B1FA2; /* Amatista (Títulos de sección) */
+    --color-acento-fuerte: #FF0000; /* Rojo Brillante (Títulos de sección, Tags) */
     --color-acento-secundario: #4A4A4A; /* Gris de detalles */
-    --font-principal: 'Montserrat', sans-serif;
-    --font-logo: 'Cinzel', serif;
+    
+    /* Tipografías Originales Restauradas */
+    --font-principal: 'Poppins', sans-serif; /* Montserrat cambiado a Poppins */
+    --font-logo: 'Anton', sans-serif; /* Cinzel cambiado a Anton */
+    
     --sombra-elevada: 0 10px 30px rgba(0, 0, 0, 0.7); 
 }
 
@@ -137,7 +141,7 @@ nav {
 .seccion h2 {
     font-size: 2.8rem; 
     margin-bottom: 10px;
-    color: var(--color-acento-fuerte); 
+    color: var(--color-acento-fuerte); /* ROJO */
     font-weight: 900;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -165,8 +169,10 @@ nav {
 
 /* BOTONES */
 .btn-principal {
-    display: inline-block; background: var(--color-principal); color: white; padding: 15px 35px; text-decoration: none; border-radius: 5px; font-weight: 700; letter-spacing: 1px; transition: background 0.3s, transform 0.2s; box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4); margin-top: 20px; text-transform: uppercase; border: none; }
-.btn-principal:hover { background: #FF4747; transform: translateY(-2px); }
+    display: inline-block; background: var(--color-principal); color: var(--color-fondo); padding: 15px 35px; text-decoration: none; border-radius: 5px; font-weight: 700; letter-spacing: 1px; transition: background 0.3s, transform 0.2s; box-shadow: 0 8px 20px rgba(7, 196, 239, 0.4); /* Sombra Cyan */
+    margin-top: 20px; text-transform: uppercase; border: none; 
+}
+.btn-principal:hover { background: #00B1D6; transform: translateY(-2px); } /* Cyan Ligeramente Más Oscuro */
 .btn-centrado { margin-top: 50px; margin-bottom: 0; }
 .btn-secundario { display: inline-block; color: var(--color-principal); padding: 10px 20px; text-decoration: none; border: 2px solid var(--color-principal); border-radius: 50px; font-weight: 700; transition: background-color 0.3s, color 0.3s; margin-top: 15px; }
 .btn-secundario:hover { background-color: var(--color-principal); color: var(--color-fondo); }
@@ -202,7 +208,7 @@ nav {
 }
 .mision-item i {
     font-size: 3rem;
-    color: var(--color-principal);
+    color: var(--color-principal); /* CYAN */
     margin-bottom: 20px;
 }
 .mision-item h3 {
@@ -234,7 +240,125 @@ nav {
 .project-info { padding: 30px; }
 .project-info h3 { font-size: 1.4rem; color: var(--color-principal); margin-bottom: 10px; }
 .project-info p { font-size: 1rem; color: #AAA; margin-bottom: 15px; }
-.tag { display: inline-block; background-color: var(--color-acento-fuerte); color: var(--color-texto-claro); padding: 5px 10px; border-radius: 3px; font-size: 0.8rem; font-weight: 700; margin-right: 8px; }
+.tag { display: inline-block; background-color: var(--color-acento-fuerte); /* ROJO */
+    color: var(--color-texto-claro); padding: 5px 10px; border-radius: 3px; font-size: 0.8rem; font-weight: 700; margin-right: 8px; }
+
+/* -------------------------------------------------------------------------- */
+/* PLANES DE PRECIOS */
+/* -------------------------------------------------------------------------- */
+.seccion-planes {
+    background-color: var(--color-fondo); 
+}
+
+.planes-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.plan-card {
+    background-color: var(--color-card); 
+    padding: 40px 30px;
+    border-radius: 12px;
+    flex: 1;
+    max-width: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    transition: transform 0.3s, border 0.3s;
+    border: 2px solid transparent; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-principal); 
+}
+
+.plan-card.destacado {
+    border-color: var(--color-acento-fuerte); /* ROJO para destacar */
+    background-color: var(--color-card); 
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4); /* Sombra Roja */
+    transform: scale(1.05); 
+}
+
+.plan-card.destacado:hover {
+    border-color: var(--color-acento-fuerte); 
+}
+
+.plan-card h3 {
+    font-size: 1.5rem;
+    color: var(--color-principal); /* CYAN */
+    margin-bottom: 20px;
+    font-family: var(--font-logo);
+}
+
+.plan-card .precio {
+    font-family: var(--font-logo);
+    margin: 20px 0;
+    line-height: 1;
+}
+
+.plan-card .moneda {
+    font-size: 2rem;
+    vertical-align: top;
+    color: var(--color-texto-claro);
+    margin-right: 5px;
+}
+
+.plan-card .cantidad {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--color-texto-claro);
+}
+
+.plan-card .duracion {
+    color: var(--color-acento-secundario);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.plan-card .caracteristicas {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.plan-card .caracteristicas li {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    color: var(--color-texto-claro);
+    font-size: 1rem;
+}
+
+.plan-card .caracteristicas li:last-child {
+    border-bottom: none;
+}
+
+.plan-card .caracteristicas i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Iconos de check y X usando los colores principales y fuertes */
+.plan-card .caracteristicas .fa-check-circle {
+    color: var(--color-principal); /* CYAN */
+}
+
+.plan-card .caracteristicas .fa-times-circle {
+    color: var(--color-acento-fuerte); /* ROJO para no incluido */
+}
+
+/* Ajuste de botón para la tarjeta */
+.plan-card .btn-principal {
+    width: 100%;
+    margin-top: 20px;
+}
+/* FIN PLANES DE PRECIOS */
 
 /* -------------------------------------------------------------------------- */
 /* EXPERIENCIA/UBICACIÓN (Parallax) */
@@ -319,7 +443,7 @@ nav {
 }
 .info-item i {
     font-size: 1.5rem;
-    color: var(--color-acento-fuerte);
+    color: var(--color-acento-fuerte); /* ROJO */
     margin-right: 15px;
 }
 .info-item p {
@@ -426,6 +550,12 @@ footer { background: var(--color-fondo); color: #555; text-align: center; paddin
     .project-block, .large-block, .small-block { grid-column: span 1 !important; grid-row: span 1 !important; }
     .large-block video { min-height: 200px; }
     
+    /* PLANES EN MÓVIL (NUEVO) */
+    .planes-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+
     /* EXPERIENCIA EN MÓVIL */
     .experiencia-grid { grid-template-columns: 1fr; gap: 30px; }
     .galeria-fotos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
