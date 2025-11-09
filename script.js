@@ -72,4 +72,40 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && modal.style.display === 'flex') {
         closeLightbox();
     }
+});// ===================================================================
+// LÓGICA DEL FORMULARIO DE CONTACTO (Mensaje de Éxito)
+// ===================================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+
+    if (contactForm && formMessage && submitButton) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Detiene el envío real del formulario (evita la recarga de página)
+
+            // 1. Ocultar el formulario y el botón
+            contactForm.style.opacity = '0';
+            contactForm.style.height = '0';
+            contactForm.style.overflow = 'hidden';
+            
+            // 2. Mostrar el mensaje de éxito
+            formMessage.innerHTML = '¡Mensaje enviado con éxito! Nos contactaremos contigo lo más pronto posible. ¡Gracias por tu interés!';
+            formMessage.classList.add('show-message');
+
+            // OPCIONAL: Reaparecer el formulario después de 5 segundos
+            setTimeout(() => {
+                formMessage.classList.remove('show-message');
+                formMessage.style.opacity = '0'; // Aseguramos que desaparece suavemente
+                
+                // Restablecer el formulario y hacerlo visible
+                contactForm.reset(); 
+                contactForm.style.opacity = '1';
+                contactForm.style.height = 'auto'; // Vuelve a su altura normal
+                contactForm.style.overflow = 'visible';
+                
+            }, 5000); // 5 segundos
+        });
+    }
 });

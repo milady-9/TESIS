@@ -647,4 +647,26 @@ footer { background: var(--color-fondo); color: #555; text-align: center; paddin
         padding: 20px;
     }
     .final-cta h2 { font-size: 2rem; }
+}/* --- ESTILOS PARA EL MENSAJE DEL FORMULARIO --- */
+.hidden-message {
+    /* Inicialmente oculto y con estilo */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin-top: 20px;
+    padding: 15px; /* Aumentado padding para mejor visibilidad */
+    background-color: var(--color-principal); /* Utiliza el color principal (cian) */
+    color: var(--color-fondo); /* Texto oscuro sobre fondo cian */
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.show-message {
+    opacity: 1;
+}
+
+/* Opcional: Estilo para que el form no se vea raro cuando el mensaje aparezca */
+.contact-form-block {
+    position: relative; 
 }
