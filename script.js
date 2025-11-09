@@ -43,7 +43,7 @@ const modalImg = document.getElementById('lightbox-image');
 const modalCaption = document.getElementById('lightbox-caption');
 
 // Función para abrir la imagen
-function openLightbox(src, caption) {
+window.openLightbox = function(src, caption) {
     modal.style.display = 'flex'; // Usamos flex para centrar
     modalImg.src = src;
     modalCaption.innerHTML = caption;
@@ -52,7 +52,7 @@ function openLightbox(src, caption) {
 }
 
 // Función para cerrar la imagen
-function closeLightbox() {
+window.closeLightbox = function() {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto'; // Habilita el scroll del fondo
     modal.classList.remove('active'); 
@@ -61,6 +61,7 @@ function closeLightbox() {
 // Cerrar al hacer clic en el fondo de la modal
 modal.addEventListener('click', function(e) {
     // Si el clic fue directamente en el modal o en el botón de cierre 'x'
+    // La clase 'lightbox-close' se encuentra dentro de 'modal'
     if (e.target === modal || e.target.classList.contains('lightbox-close')) {
         closeLightbox();
     }

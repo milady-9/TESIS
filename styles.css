@@ -111,9 +111,10 @@ nav {
 /* SECCIONES Y GENERALES */
 /* -------------------------------------------------------------------------- */
 
-/* HERO SECTION */
+/* HERO SECTION - LOGO DE FONDO RECUPERADO */
 .fullscreen-visual {
     height: 100vh;
+    /* CORRECCIÓN: Usamos el LOGO.png como fondo principal */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('LOGO.png'); 
     background-size: cover;
     background-position: center;
@@ -224,19 +225,42 @@ nav {
 
 
 /* -------------------------------------------------------------------------- */
-/* PORTAFOLIO - GRID ASIMÉTRICO */
+/* PORTAFOLIO - GRID IGUALADO */
 /* -------------------------------------------------------------------------- */
 .seccion-portafolio { background-color: var(--color-card); }
-.portafolio-list { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto; gap: 40px; align-items: stretch; }
-.project-block { background-color: var(--color-fondo); border-radius: 12px; overflow: hidden; box-shadow: var(--sombra-elevada); text-align: left; transition: transform 0.3s; display: flex; flex-direction: column; }
-.project-block:hover { transform: scale(1.02); }
-.large-block { grid-column: span 1; }
-.small-block { grid-column: span 1; }
-.portafolio-list .project-block:nth-child(1) { grid-row: span 2; }
-.portafolio-list .project-block:nth-child(4) { grid-row: span 2; grid-column: 1 / 2; }
-.portafolio-list .project-block:nth-child(3) { grid-column: 2 / 3; }
-.project-block video { width: 100%; min-height: 250px; object-fit: cover; display: block; }
-.large-block video { min-height: 400px; }
+
+/* CORRECCIÓN: Tres columnas de igual tamaño y límite de ancho */
+.portafolio-list { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 40px; 
+    align-items: stretch; 
+    
+    /* AÑADIDO: Limita el ancho máximo del contenedor para controlar el tamaño de los videos */
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+.project-block { 
+    background-color: var(--color-fondo); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: var(--sombra-elevada); 
+    text-align: left; 
+    transition: transform 0.3s; 
+    display: flex; 
+    flex-direction: column; 
+}
+.project-block:hover { 
+    transform: scale(1.02); 
+}
+
+.project-block video { 
+    width: 100%; 
+    min-height: 200px; /* Altura mínima uniforme para el video */
+    object-fit: cover; 
+    display: block; 
+}
+
 .project-info { padding: 30px; }
 .project-info h3 { font-size: 1.4rem; color: var(--color-principal); margin-bottom: 10px; }
 .project-info p { font-size: 1rem; color: #AAA; margin-bottom: 15px; }
@@ -510,8 +534,58 @@ footer { background: var(--color-fondo); color: #555; text-align: center; paddin
 /* -------------------------------------------------------------------------- */
 /* LIGHTBOX */
 /* -------------------------------------------------------------------------- */
-.lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.95); align-items: center; justify-content: center; }
-.lightbox-close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 60px; font-weight: bold; transition: 0.3s; cursor: pointer; z-index: 2001; text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); }
+.lightbox { 
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+    background-color: rgba(0, 0, 0, 0.95); 
+    align-items: center; 
+    justify-content: center; 
+}
+.lightbox-close { 
+    position: absolute; 
+    top: 15px; 
+    right: 35px; 
+    color: #f1f1f1; 
+    font-size: 60px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    cursor: pointer; 
+    z-index: 2001; 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); 
+}
+
+/* Contenedor para limitar el tamaño de la imagen */
+.lightbox-content {
+    /* Define el área máxima del modal */
+    max-width: 95vw; /* Máximo 95% del ancho de la pantalla */
+    max-height: 95vh; /* Máximo 95% del alto de la pantalla */
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Espacio para que la imagen no toque los bordes */
+}
+
+/* La imagen debe ajustarse a su contenedor */
+.lightbox-image {
+    max-width: 100%; /* La imagen no superará el ancho de su contenedor (.lightbox-content) */
+    max-height: 80vh; /* La imagen no superará el 80% del alto de la pantalla */
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain; /* Asegura que la imagen completa se vea sin recortar */
+    transition: transform 0.3s;
+}
+
 
 /* -------------------------------------------------------------------------- */
 /* MEDIA QUERIES (RESPONSIVO) */
@@ -546,9 +620,13 @@ footer { background: var(--color-fondo); color: #555; text-align: center; paddin
     }
     
     /* PORTAFOLIO EN MÓVIL */
-    .portafolio-list { grid-template-columns: 1fr; gap: 25px; }
-    .project-block, .large-block, .small-block { grid-column: span 1 !important; grid-row: span 1 !important; }
-    .large-block video { min-height: 200px; }
+    .portafolio-list { 
+        grid-template-columns: 1fr; 
+        gap: 25px; 
+        max-width: none; /* Elimina el límite de ancho en móvil */
+    }
+    .project-block { grid-column: span 1 !important; grid-row: span 1 !important; }
+    .project-block video { min-height: 200px; } /* Mantiene la altura mínima */
     
     /* PLANES EN MÓVIL (NUEVO) */
     .planes-grid {
