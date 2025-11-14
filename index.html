@@ -1,364 +1,493 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MILY PRODUCTIONS - Portafolio Audiovisual</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <title>MILY PRODUCTIONS | Portafolio Audiovisual</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Mily Productions: productora audiovisual especializada en cine, documentales y contenido visual profesional. Portafolio, planes y compra de servicios en línea." />
+    <meta name="keywords" content="Mily Productions, producción audiovisual, documental, cine, video, Ecuador, portafolio, servicios audiovisuales" />
+    <meta name="author" content="Mily Productions" />
+
+    <!-- SOCIAL -->
+    <meta property="og:title" content="Mily Productions - Portafolio Audiovisual" />
+    <meta property="og:description" content="Producción audiovisual profesional con enfoque cinematográfico." />
+    <meta property="og:image" content="LOGO.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- TIPOGRAFÍAS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&family=Anton&display=swap" rel="stylesheet" />
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
     <header>
-        <nav>
+        <nav aria-label="Navegación principal">
             <a href="#inicio" class="logo-link">
-                <img src="LOGO.png" alt="MILY PRODUCTIONS Logo" class="logo-img"> 
-                
-                <div class="logo-text">
-                    MILY PRODUCTIONS
-                </div>
+                <img src="LOGO.png" alt="Logo Mily Productions" class="logo-img" />
+                <span class="logo-text">Mily Productions</span>
             </a>
-            
-            <button class="menu-toggle" aria-label="Abrir menú de navegación">
+
+            <button class="menu-toggle" aria-label="Menú móvil">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            
-            <ul class="nav-menu"> 
+
+            <ul class="nav-menu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#mision">Misión</a></li>
-                <li><a href="#portafolio">Trabajos</a></li>
-                <li><a href="#planes">Planes</a></li> 
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#planes">Planes</a></li>
                 <li><a href="#experiencia">Campo</a></li>
-                <li><a href="#contacto">Contacto</a></li> 
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
+
+            <!-- Ícono de carrito estilo e-commerce -->
+            <button class="cart-icon-btn" aria-label="Ver carrito">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
         </nav>
     </header>
 
     <main>
+        <!-- HERO -->
         <section id="inicio" class="hero fullscreen-visual">
             <div class="hero-content">
                 <h1>LA HISTORIA DE TU VISIÓN</h1>
-                <p>Somos MILY PRODUCTIONS, donde cada fotograma cuenta una narrativa épica. Creando cine, documentales y campañas impactantes en Balzapamba y más allá.</p>
-                <a href="#portafolio" class="btn-principal">VER TRABAJOS DESTACADOS</a>
-                </div>
+                <p>
+                    Transformamos ideas en narrativas visuales de alto impacto. Producción audiovisual profesional con enfoque cinematográfico.
+                </p>
+                <a href="#portafolio" class="btn-principal">Ver Portafolio</a>
+            </div>
         </section>
-        
+
+        <!-- MISIÓN -->
         <section id="mision" class="seccion seccion-mision">
             <div class="seccion-content">
-                <h2>NUESTRA FILOSOFÍA: EL IMPACTO VISUAL</h2>
-                <p class="subtitulo">Transformamos ideas en experiencias inmersivas. Descubre lo que nos impulsa.</p>
+                <h2>NUESTRA FILOSOFÍA</h2>
+                <p class="subtitulo">Producción audiovisual con enfoque artístico, técnico y narrativo.</p>
 
                 <div class="mision-grid">
                     <div class="mision-item">
                         <i class="fas fa-camera-retro"></i>
-                        <h3>CINEMATOGRAFÍA DE AUTOR</h3>
-                        <p>Cada proyecto es tratado con una visión artística única, garantizando una estética de alto nivel cinematográfico.</p>
+                        <h3>Cinematografía de Autor</h3>
+                        <p>
+                            Creamos proyectos con estilo propio, cuidando la composición, la luz y la narrativa visual en cada fotograma.
+                        </p>
                     </div>
+
                     <div class="mision-item">
                         <i class="fas fa-mountain"></i>
-                        <h3>CONOCIMIENTO DE CAMPO</h3>
-                        <p>Expertos en filmar en Balzapamba y locaciones complejas, asegurando la logística y la seguridad del equipo.</p>
+                        <h3>Conocimiento de Campo</h3>
+                        <p>
+                            Dominamos la filmación en distintas locaciones y condiciones, asegurando una producción fluida, segura y bien planificada.
+                        </p>
                     </div>
+
                     <div class="mision-item">
                         <i class="fas fa-pencil-ruler"></i>
-                        <h3>POST-PRODUCCIÓN PRECISA</h3>
-                        <p>Un flujo de trabajo meticuloso en edición, colorización y sonido para entregar un producto final pulido y profesional.</p>
+                        <h3>Postproducción Profesional</h3>
+                        <p>
+                            Edición, corrección de color, sonido y ritmo narrativo optimizados para entregar un producto final pulido y de alto impacto visual.
+                        </p>
                     </div>
                 </div>
-                <a href="#contacto" class="btn-principal">EMPEZAR TU PROYECTO</a>
             </div>
         </section>
 
+        <!-- PORTAFOLIO -->
         <section id="portafolio" class="seccion seccion-portafolio">
             <div class="seccion-content">
                 <h2>PORTAFOLIO EN FOCO</h2>
-                <p class="subtitulo">Una selección de proyectos que definen nuestra identidad visual.</p>
-                
-                <div class="portafolio-list">
+                <p class="subtitulo">Proyectos que definen nuestro sello visual.</p>
 
-                    <div class="project-block">
-                        <video controls width="100%" preload="metadata" poster="miniaturas/corazon_subtropical.jpg">
-                            <source src="mi-video-portafolio.mp4" type="video/mp4">
+                <div class="portafolio-list">
+                    <!-- 01 -->
+                    <article class="project-block">
+                        <video controls preload="metadata" poster="miniaturas/corazon_subtropical.jpg">
+                            <source src="mi-video-portafolio.mp4" type="video/mp4" />
+                            Tu navegador no soporta la reproducción de video.
                         </video>
                         <div class="project-info">
-                            <h3>01. CORAZÓN SUBTROPICAL (Destacado)</h3>
-                            <p>Un cortometraje que captura la esencia de la vida y el paisaje de Balzapamba, fusionando aventura y cultura. Este proyecto fue premiado por su cinematografía.</p>
+                            <h3>01. CORAZÓN SUBTROPICAL</h3>
+                            <p>Cortometraje con estética cinematográfica y narrativa emocional.</p>
                             <span class="tag">Cortometraje</span>
                             <span class="tag">Cine</span>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="project-block">
-                         <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_1.jpg">
-                            <source src="otro-video-1.mp4" type="video/mp4">
+                    <!-- 02 -->
+                    <article class="project-block">
+                        <video controls preload="metadata" poster="miniaturas/video_adicional_1.jpg">
+                            <source src="otro-video-1.mp4" type="video/mp4" />
+                            Tu navegador no soporta la reproducción de video.
                         </video>
                         <div class="project-info">
                             <h3>02. Tradiciones Vivas</h3>
-                            <p>Documental sobre la gastronomía local y su legado ancestral.</p>
+                            <p>Documental sobre identidad cultural y costumbres locales.</p>
                             <span class="tag">Documental</span>
                             <span class="tag">Cultura</span>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="project-block">
-                         <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_2.jpg">
-                            <source src="otro-video-2.mp4" type="video/mp4">
+                    <!-- 03 -->
+                    <article class="project-block">
+                        <video controls preload="metadata" poster="miniaturas/video_adicional_2.jpg">
+                            <source src="otro-video-2.mp4" type="video/mp4" />
+                            Tu navegador no soporta la reproducción de video.
                         </video>
                         <div class="project-info">
-                            <h3>03. Balzapamba: Tu Destino</h3>
-                            <p>Campaña promocional de alto impacto para el sector turístico.</p>
-                            <span class="tag">Comercial</span>
+                            <h3>03. Destino Promocional</h3>
+                            <p>Campaña visual orientada al turismo y la promoción estratégica.</p>
                             <span class="tag">Promoción</span>
+                            <span class="tag">Publicidad</span>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="project-block">
-                         <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_3.jpg">
-                            <source src="otro-video-3.mp4" type="video/mp4">
+                    <!-- 04 -->
+                    <article class="project-block">
+                        <video controls preload="metadata" poster="miniaturas/video_adicional_3.jpg">
+                            <source src="otro-video-3.mp4" type="video/mp4" />
+                            Tu navegador no soporta la reproducción de video.
                         </video>
                         <div class="project-info">
-                            <h3>04. Río y Cordillera (Behind the Scenes)</h3>
-                            <p>Un vistazo íntimo a nuestro proceso de producción en locaciones extremas.</p>
-                            <span class="tag">Detrás de Cámaras</span>
-                            <span class="tag">Proceso</span>
+                            <h3>04. Behind The Scenes</h3>
+                            <p>Proceso creativo y técnico detrás de cámaras.</p>
+                            <span class="tag">Detrás de cámaras</span>
+                            <span class="tag">Producción</span>
                         </div>
-                    </div>
-                    
-                    <div class="project-block">
-                         <video controls width="100%" preload="metadata" poster="miniaturas/video_adicional_4.jpg">
-                            <source src="VIDEO 2.mp4" type="video/mp4">
+                    </article>
+
+                    <!-- 05 -->
+                    <article class="project-block">
+                        <video controls preload="metadata" poster="miniaturas/video_adicional_4.jpg">
+                            <source src="VIDEO 2.mp4" type="video/mp4" />
+                            Tu navegador no soporta la reproducción de video.
                         </video>
                         <div class="project-info">
-                            <h3>05. Belleza del Subtrópico</h3>
-                            <p>Un recorrido aéreo y terrestre capturando la vida silvestre y los paisajes.</p>
+                            <h3>05. Naturaleza Extendida</h3>
+                            <p>Piezas aéreas y terrestres con enfoque ambiental y paisajístico.</p>
                             <span class="tag">Naturaleza</span>
                             <span class="tag">Aéreo</span>
                         </div>
-                    </div>
-                    
+                    </article>
                 </div>
-                
             </div>
         </section>
-        
+
+        <!-- PLANES (PRODUCTOS) -->
         <section id="planes" class="seccion seccion-planes">
             <div class="seccion-content">
-                <h2>NUESTROS PLANES DE PRODUCCIÓN</h2>
-                <p class="subtitulo">Elige el paquete que mejor se ajusta a la escala y ambición de tu visión audiovisual.</p>
+                <h2>PLANES DE PRODUCCIÓN</h2>
+                <p class="subtitulo">Opciones según tu objetivo, alcance y presupuesto.</p>
 
                 <div class="planes-grid">
-                    
-                    <div class="plan-card">
+                    <!-- BÁSICO -->
+                    <article class="plan-card">
                         <h3>PACK BÁSICO</h3>
                         <div class="precio">
-                            <span class="moneda">Desde $</span>
+                            <span class="moneda">$</span>
                             <span class="cantidad">60</span>
                         </div>
-                        <p class="duracion">Esencial. Ideal para contenido rápido para redes. Precio: $60 – $80</p>
+                        <p class="duracion">Contenido corto para redes sociales.</p>
                         <ul class="caracteristicas">
-                            <li><i class="fas fa-check-circle"></i> 1 pieza audiovisual (hasta 1 min)</li>
-                            <li><i class="fas fa-check-circle"></i> Grabación en 1 ubicación</li>
-                            <li><i class="fas fa-check-circle"></i> Edición básica (texto, música, cortes)</li>
-                            <li><i class="fas fa-check-circle"></i> Entrega en formato vertical o horizontal</li>
-                            <li><i class="fas fa-check-circle"></i> Edición profesional avanzada</li>
-                            <li><i class="fas fa-check-circle"></i> Planificación y guionización previa</li>
+                            <li><i class="fas fa-check-circle"></i> 1 video hasta 1 minuto</li>
+                            <li><i class="fas fa-check-circle"></i> 1 locación</li>
+                            <li><i class="fas fa-check-circle"></i> Edición básica</li>
+                            <li><i class="fas fa-check-circle"></i> Formato vertical u horizontal</li>
                         </ul>
-                        <a href="#contacto" class="btn-principal">CONTACTAR</a>
-                    </div>
+                        <button
+                            type="button"
+                            class="btn-principal add-to-cart"
+                            data-name="Pack Básico"
+                            data-price="60"
+                        >
+                            Agregar al carrito
+                        </button>
+                    </article>
 
-                    <div class="plan-card destacado">
+                    <!-- PROFESIONAL -->
+                    <article class="plan-card destacado">
                         <h3>PACK PROFESIONAL</h3>
                         <div class="precio">
-                            <span class="moneda">Desde $</span>
+                            <span class="moneda">$</span>
                             <span class="cantidad">120</span>
                         </div>
-                        <p class="duracion">Contenido estratégico. Pensado para marcas y turismo. Precio: $120 – $200</p>
+                        <p class="duracion">Producción estratégica con narrativa visual.</p>
                         <ul class="caracteristicas">
-                            <li><i class="fas fa-check-circle"></i> 2 a 3 piezas audiovisuales</li>
-                            <li><i class="fas fa-check-circle"></i> Grabación en múltiples planos/ubicaciones</li>
-                            <li><i class="fas fa-check-circle"></i> Edición profesional (storytelling, mejoras de color)</li>
-                            <li><i class="fas fa-check-circle"></i> Versión para Instagram / Facebook / Reels</li>
-                            <li><i class="fas fa-check-circle"></i> Edición avanzada (Sonido/Efectos)</li>
-                            <li><i class="fas fa-check-circle"></i> Cámaras de Cine (Opcional)</li>
+                            <li><i class="fas fa-check-circle"></i> 2 a 3 videos</li>
+                            <li><i class="fas fa-check-circle"></i> Varias locaciones</li>
+                            <li><i class="fas fa-check-circle"></i> Storytelling + color</li>
+                            <li><i class="fas fa-check-circle"></i> Formatos para redes</li>
                         </ul>
-                        <a href="#contacto" class="btn-principal">COMENZAR PROYECTO</a>
-                    </div>
+                        <button
+                            type="button"
+                            class="btn-principal add-to-cart"
+                            data-name="Pack Profesional"
+                            data-price="120"
+                        >
+                            Agregar al carrito
+                        </button>
+                    </article>
 
-                    <div class="plan-card">
+                    <!-- PREMIUM -->
+                    <article class="plan-card">
                         <h3>PACK PREMIUM</h3>
                         <div class="precio">
-                            <span class="moneda">Desde $</span>
+                            <span class="moneda">$</span>
                             <span class="cantidad">300</span>
                         </div>
-                        <p class="duracion">Producción completa. Nivel cinematográfico o de alto impacto. Precio: $300 – $500+</p>
+                        <p class="duracion">Nivel cinematográfico y dirección completa.</p>
                         <ul class="caracteristicas">
-                            <li><i class="fas fa-check-circle"></i> 4+ piezas o video tipo documental/campaña</li>
-                            <li><i class="fas fa-check-circle"></i> Grabación con planificación previa (guion + dirección)</li>
-                            <li><i class="fas fa-check-circle"></i> Edición avanzada (color profesional, sonido, efectos)</li>
-                            <li><i class="fas fa-check-circle"></i> Cámaras de Cine y óptica profesional</li>
-                            <li><i class="fas fa-check-circle"></i> Versión extendida + contenido para redes</li>
-                            <li><i class="fas fa-check-circle"></i> Flujo de trabajo 4K/6K (Nativo)</li>
+                            <li><i class="fas fa-check-circle"></i> 4+ piezas o documental</li>
+                            <li><i class="fas fa-check-circle"></i> Guion + dirección</li>
+                            <li><i class="fas fa-check-circle"></i> Color profesional</li>
+                            <li><i class="fas fa-check-circle"></i> Flujo 4K–6K</li>
                         </ul>
-                        <a href="#contacto" class="btn-principal">SOLICITAR COTIZACIÓN</a>
-                    </div>
+                        <button
+                            type="button"
+                            class="btn-principal add-to-cart"
+                            data-name="Pack Premium"
+                            data-price="300"
+                        >
+                            Agregar al carrito
+                        </button>
+                    </article>
                 </div>
             </div>
         </section>
-        
+
+        <!-- EXPERIENCIA -->
         <section id="experiencia" class="seccion seccion-info parallax-bg">
             <div class="seccion-content">
-                <h2>NUESTRA EXPERIENCIA EN CAMPO</h2>
-                <p class="subtitulo">Conocemos las locaciones más impresionantes para tu proyecto.</p>
+                <h2>EXPERIENCIA EN CAMPO</h2>
+                <p class="subtitulo">Locaciones, recorridos, paisajes y áreas naturales.</p>
 
                 <div class="experiencia-grid">
-                    
+                    <!-- MAPA -->
                     <div class="grid-item mapa-container">
-                        <h3>Locaciones Clave: Mapa Interactivo</h3>
-                        <p>Descubre dónde hemos filmado. Balzapamba: la provincia de Bolívar, conectando la sierra con la costa.</p>
+                        <h3>Mapa de Locaciones</h3>
+                        <p>Referencias generales de zonas donde se ha realizado producción audiovisual.</p>
+
                         <div class="mapa-iframe">
-                            <iframe 
-                                src="https://maps.google.com/maps?width=100%25&height=600&hl=es&q=Balzapamba,%20Ecuador&t=&z=13&ie=UTF8&iwloc=B&output=embed"
-                                width="100%" 
-                                height="100%" 
-                                style="border:0;" 
-                                allowfullscreen="" 
+                            <iframe
+                                src="https://maps.google.com/maps?q=Balzapamba,%20Ecuador&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                width="100%"
+                                height="100%"
+                                style="border: 0"
+                                allowfullscreen=""
                                 loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
                         </div>
-                        <a href="https://www.google.com/maps/place/Balzapamba" target="_blank" class="btn-secundario">ABRIR EN GOOGLE MAPS</a>
+
+                        <a
+                            href="https://www.google.com/maps/place/Balzapamba"
+                            target="_blank"
+                            class="btn-secundario"
+                            rel="noopener noreferrer"
+                            >Abrir en Maps</a
+                        >
                     </div>
-                    
+
+                    <!-- GALERÍA -->
                     <div class="grid-item galeria-container">
                         <h3>Galería de Campo</h3>
+
                         <div class="galeria-fotos">
-                            
                             <figure>
-                                <a href="#" onclick="openLightbox('FOTO 2.jpg', 'Modernas Piscinas y Toboganes - Complejo Acuático'); return false;">
-                                    <img src="FOTO 2.jpg" alt="Piscinas Modernas y Toboganes" class="foto-galeria">
+                                <a href="#" onclick="openLightbox('FOTO 2.jpg', 'Piscinas y áreas recreativas'); return false;">
+                                    <img src="FOTO 2.jpg" class="foto-galeria" alt="Piscinas y toboganes" loading="lazy" />
                                 </a>
-                                <figcaption>Piscinas Modernas</figcaption>
+                                <figcaption>Recreación</figcaption>
                             </figure>
 
                             <figure>
-                                <a href="#" onclick="openLightbox('FOTO 3.jpg', 'Vista Aérea del Complejo y el Pueblo de Balzapamba'); return false;">
-                                    <img src="FOTO 3.jpg" alt="Vista Aérea del Complejo y el Pueblo" class="foto-galeria">
+                                <a href="#" onclick="openLightbox('FOTO 3.jpg', 'Vista aérea general'); return false;">
+                                    <img src="FOTO 3.jpg" class="foto-galeria" alt="Vista aérea de complejo y entorno" loading="lazy" />
                                 </a>
-                                <figcaption>Vista Panorámica</figcaption>
+                                <figcaption>Panorama</figcaption>
                             </figure>
 
                             <figure>
-                                <a href="#" onclick="openLightbox('FOTO 4.jpg', 'Sendero de Piedra a Través de la Selva Subtropical'); return false;">
-                                    <img src="FOTO 4.jpg" alt="Sendero en la Selva" class="foto-galeria">
+                                <a href="#" onclick="openLightbox('FOTO 4.jpg', 'Sendero natural'); return false;">
+                                    <img src="FOTO 4.jpg" class="foto-galeria" alt="Sendero de piedra rodeado de vegetación" loading="lazy" />
                                 </a>
-                                <figcaption>Sendero Natural</figcaption>
+                                <figcaption>Sendero</figcaption>
                             </figure>
-                            
+
                             <figure>
-                                <a href="#" onclick="openLightbox('FOTO 5.jpg', 'Piscina Natural de Río - Zona de Baño y Flotación'); return false;">
-                                    <img src="FOTO 5.jpg" alt="Piscina Natural de Río (I)" class="foto-galeria">
+                                <a href="#" onclick="openLightbox('FOTO 5.jpg', 'Piscina natural de río'); return false;">
+                                    <img src="FOTO 5.jpg" class="foto-galeria" alt="Piscina natural de río" loading="lazy" />
                                 </a>
-                                <figcaption>Piscina Natural (I)</figcaption>
+                                <figcaption>Río</figcaption>
                             </figure>
-                            
+
                             <figure>
-                                <a href="#" onclick="openLightbox('FOTO 6.jpg', 'Salto y Recreación en la Piscina Natural'); return false;">
-                                    <img src="FOTO 6.jpg" alt="Salto a la Piscina Natural" class="foto-galeria">
+                                <a href="#" onclick="openLightbox('FOTO 6.jpg', 'Zona de salto en el río'); return false;">
+                                    <img src="FOTO 6.jpg" class="foto-galeria" alt="Salto al agua" loading="lazy" />
                                 </a>
-                                <figcaption>Salto al Agua</figcaption>
+                                <figcaption>Salto</figcaption>
                             </figure>
-                            
+
                             <figure>
-                                <a href="#" onclick="openLightbox('FOTO 7.jpg', 'Vista Lateral del Área de Baño Natural en el Río'); return false;">
-                                    <img src="FOTO 7.jpg" alt="Área de Baño Natural" class="foto-galeria">
+                                <a href="#" onclick="openLightbox('FOTO 7.jpg', 'Área de baño natural'); return false;">
+                                    <img src="FOTO 7.jpg" class="foto-galeria" alt="Área de baño en río" loading="lazy" />
                                 </a>
-                                <figcaption>Piscina Natural (II)</figcaption>
+                                <figcaption>Baño</figcaption>
                             </figure>
-                            
+
                             <figure>
-                                <a href="#" onclick="openLightbox('FOTO 8.jpg', 'Complejo de Piscinas y Área Recreativa con Sombrillas'); return false;">
-                                    <img src="FOTO 8.jpg" alt="Área Recreativa con Sombrillas" class="foto-galeria">
+                                <a href="#" onclick="openLightbox('FOTO 8.jpg', 'Piscinas recreativas'); return false;">
+                                    <img src="FOTO 8.jpg" class="foto-galeria" alt="Piscinas recreativas con sombrillas" loading="lazy" />
                                 </a>
-                                <figcaption>Área Recreativa</figcaption>
+                                <figcaption>Piscinas</figcaption>
                             </figure>
-                            
-                            
-</div>
-                        <p class="nota-galeria">Haga clic en las imágenes para ampliar la vista.</p>
+                        </div>
+
+                        <p class="nota-galeria">Haz clic para ampliar cada imagen.</p>
                     </div>
-
                 </div>
             </div>
         </section>
-        
-        <section id="contacto" class="seccion seccion-connect parallax-bg final-cta">
+
+        <!-- CONTACTO (SIN FORMULARIO, SOLO INFO) -->
+        <section id="contacto" class="seccion final-cta">
             <div class="seccion-content">
-                <h2>PREPÁRATE PARA FILMAR</h2>
-                <p class="subtitulo">Llevamos tu concepto de la idea a la pantalla grande. Hablemos de tu proyecto.</p>
-                
+                <h2>¿NECESITAS ALGO PERSONALIZADO?</h2>
+                <p class="subtitulo">
+                    Si tu proyecto no encaja en un pack, podemos armar una propuesta a medida.
+                </p>
+
                 <div class="contact-layout">
-                    
+                    <!-- Información -->
                     <div class="contact-info-block">
-                        <h3>Información Clave</h3>
-                        <p>Nuestro equipo está listo para responder tus consultas y discutir las bases de tu visión.</p>
-                        
+                        <h3>Información de Contacto</h3>
+
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
-                            <p>Email principal:<br><a href="mailto:milyproductions9@gmail.com">milyproductions9@gmail.com</a></p>
+                            <p>Email:<br /><a href="mailto:milyproductions9@gmail.com">milyproductions9@gmail.com</a></p>
                         </div>
 
                         <div class="info-item">
                             <i class="fab fa-whatsapp"></i>
-                            <p>WhatsApp (Mensaje Directo):<br><a href="https://wa.me/593993617576" target="_blank">+593 99 361 7576</a></p>
+                            <p>
+                                WhatsApp:<br /><a href="https://wa.me/593993617576" target="_blank">+593 99 361 7576</a>
+                            </p>
                         </div>
-                        
+
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Base de Operaciones:<br>Simon Bolivar, Guayas</p>
+                            <p>Ubicación:<br />Simón Bolívar, Guayas – Ecuador</p>
                         </div>
-                        
+
                         <div class="social-links large-links">
-                            <a href="https://wa.me/593993617576" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://www.facebook.com/share/1ZhtNhujws/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/mily.productions?igsh=MWRjZ3A4YnV2enI1MQ==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://youtube.com/milysproductions" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/593993617576"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.facebook.com/share/1ZhtNhujws/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/mily.productions?igsh=MWRjZ3A4YnV2enI1MQ=="
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a href="https://youtube.com/milysproductions"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
-                    
+
+                    <!-- Bloque texto proceso -->
                     <div class="contact-form-block">
-                        <h3>Envíanos un Mensaje Rápido</h3>
-                        <form id="contact-form" action="#" method="POST" class="contact-form">
-                            <input type="text" name="name" placeholder="Tu Nombre Completo" required>
-                            <input type="email" name="email" placeholder="Tu Email" required>
-                            <input type="text" name="subject" placeholder="Asunto del Proyecto" required>
-                            <textarea name="message" rows="5" placeholder="Cuéntanos tu idea..." required></textarea>
-                            <button type="submit" class="btn-principal">ENVIAR MENSAJE</button>
-                        </form>
-                        <p id="form-message" class="hidden-message"></p>
+                        <h3>Proceso de compra</h3>
+                        <p>
+                            1. Elige uno o varios planes en la sección <strong>Planes</strong> y haz clic en
+                            <em>"Agregar al carrito"</em>.<br />
+                            2. Abre el <strong>carrito</strong> desde el ícono 🛒 en la parte superior derecha.<br />
+                            3. Revisa los detalles y realiza el pago seguro mediante <strong>PayPal</strong>.<br />
+                            4. Te contactaremos por correo o WhatsApp para coordinar la producción.
+                        </p>
+                        <p class="nota-galeria">
+                            Si necesitas factura, cambios en el alcance o un contrato formal, también se puede gestionar
+                            después de la compra.
+                        </p>
                     </div>
-                    
                 </div>
             </div>
         </section>
     </main>
-    
+
+    <!-- LIGHTBOX -->
     <div id="lightbox-modal" class="lightbox">
-        <span class="lightbox-close">×</span>
+        <span class="lightbox-close">&times;</span>
         <div class="lightbox-content">
-            <img class="lightbox-image" id="lightbox-image">
-            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <img id="lightbox-image" class="lightbox-image" alt="Imagen ampliada" />
+            <div id="lightbox-caption" class="lightbox-caption"></div>
         </div>
     </div>
 
+    <!-- PANEL LATERAL DEL CARRITO (CON PESTAÑAS) -->
+    <aside id="cart-panel" class="cart-panel" aria-label="Carrito de compras">
+        <div class="cart-panel-content">
+            <button class="cart-close" aria-label="Cerrar carrito">&times;</button>
+
+            <div class="cart-tabs">
+                <button class="cart-tab active" data-tab="resumen">Carrito</button>
+                <button class="cart-tab" data-tab="info">Información de compra</button>
+            </div>
+
+            <!-- Pestaña 1: Resumen -->
+            <div class="cart-tab-content active" data-tab-content="resumen">
+                <h3>Carrito de compras</h3>
+                <p class="cart-empty-text">
+                    Tu carrito está vacío. Agrega un plan desde la sección <strong>Planes</strong>.
+                </p>
+                <ul id="cart-items"></ul>
+                <p class="cart-total-line">
+                    Total: $ <span id="cart-total">0.00</span> USD
+                </p>
+                <div id="paypal-button-container"></div>
+                <p class="cart-note">
+                    El pago se procesa con PayPal. Una vez confirmado, nos pondremos en contacto contigo para coordinar
+                    fechas, locaciones y detalles técnicos.
+                </p>
+            </div>
+
+            <!-- Pestaña 2: Info -->
+            <div class="cart-tab-content" data-tab-content="info">
+                <h3>¿Cómo funciona la compra?</h3>
+                <p>
+                    <strong>1.</strong> Elige uno o varios planes en la sección <strong>Planes</strong> y haz clic en
+                    <em>"Agregar al carrito"</em>.<br />
+                    <strong>2.</strong> Abre el carrito desde el ícono 🛒 en la parte superior derecha.<br />
+                    <strong>3.</strong> Revisa el detalle, ajusta la cantidad y presiona el botón de pago de
+                    <strong>PayPal</strong>.<br />
+                    <strong>4.</strong> Una vez realizado el pago, recibirás la confirmación y luego te contactaremos
+                    por <strong>WhatsApp</strong> o <strong>correo</strong> para coordinar la producción.
+                </p>
+                <p class="cart-note">
+                    Si necesitas una propuesta personalizada, factura o contrato, puedes escribirnos a
+                    <a href="mailto:milyproductions9@gmail.com">milyproductions9@gmail.com</a> o al WhatsApp
+                    <a href="https://wa.me/593993617576" target="_blank" rel="noopener noreferrer">+593 99 361 7576</a>.
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- FOOTER -->
     <footer>
         <p class="creditos-footer">Angelly Lombeida | MILY PRODUCTIONS [2025]</p>
-        <p>© 2025 MILY PRODUCTIONS. Todos los derechos reservados.</p>
+        <p>© 2025 Mily Productions. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- SDK PAYPAL (PON TU CLIENT ID REAL) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AXxrNJ-Ka7ZBJMBiZoLEZYnjJBR9YVYI5WAmDJTDuFH8D_qczddqF1nnMndnJ0nV6_nCnDM2pHImVLf4&currency=USD"></script>
+
+    <!-- JS -->
     <script src="script.js"></script>
 </body>
 </html>
