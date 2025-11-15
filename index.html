@@ -1,493 +1,390 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>MILY PRODUCTIONS | Portafolio Audiovisual</title>
+  <title>Mily Productions | Productora Audiovisual</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Mily Productions: productora audiovisual especializada en cine, documentales y contenido visual profesional. Portafolio, planes y compra de servicios en línea." />
-    <meta name="keywords" content="Mily Productions, producción audiovisual, documental, cine, video, Ecuador, portafolio, servicios audiovisuales" />
-    <meta name="author" content="Mily Productions" />
+  <meta name="description" content="Mily Productions produce spots, contenido digital y documentales desde Simón Bolívar (Guayas) con enfoque cinematográfico y estratégico." />
+  <meta name="author" content="Mily Productions" />
 
-    <!-- SOCIAL -->
-    <meta property="og:title" content="Mily Productions - Portafolio Audiovisual" />
-    <meta property="og:description" content="Producción audiovisual profesional con enfoque cinematográfico." />
-    <meta property="og:image" content="LOGO.png" />
-    <meta property="og:type" content="website" />
+  <link rel="shortcut icon" href="LOGO.png" type="image/png" />
 
-    <!-- ESTILOS -->
-    <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Anton&display=swap" rel="stylesheet"/>
 
-    <!-- TIPOGRAFÍAS -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&family=Anton&display=swap" rel="stylesheet" />
-
-    <!-- ICONOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-    <!-- HEADER -->
-    <header>
-        <nav aria-label="Navegación principal">
-            <a href="#inicio" class="logo-link">
-                <img src="LOGO.png" alt="Logo Mily Productions" class="logo-img" />
-                <span class="logo-text">Mily Productions</span>
-            </a>
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <a href="#inicio" class="logo-link">
+        <img src="LOGO.png" alt="Logo Mily Productions" class="logo-img">
+        <span class="logo-text">Mily Productions</span>
+      </a>
 
-            <button class="menu-toggle" aria-label="Menú móvil">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#mision">Misión</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#planes">Planes</a></li>
-                <li><a href="#experiencia">Campo</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+      <ul class="nav-menu">
+        <li><a href="#spots-hero">Servicios</a></li>
+        <li><a href="#reels">Reels</a></li>
+        <li><a href="#quienes-somos">Quiénes somos</a></li>
+        <li><a href="#planes">Planes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
 
-            <!-- Ícono de carrito estilo e-commerce -->
-            <button class="cart-icon-btn" aria-label="Ver carrito">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count" class="cart-count">0</span>
-            </button>
-        </nav>
-    </header>
+      <button class="cart-icon-btn" aria-label="Ver carrito">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count" class="cart-count">0</span>
+      </button>
+    </nav>
+  </header>
 
-    <main>
-        <!-- HERO -->
-        <section id="inicio" class="hero fullscreen-visual">
-            <div class="hero-content">
-                <h1>LA HISTORIA DE TU VISIÓN</h1>
-                <p>
-                    Transformamos ideas en narrativas visuales de alto impacto. Producción audiovisual profesional con enfoque cinematográfico.
-                </p>
-                <a href="#portafolio" class="btn-principal">Ver Portafolio</a>
-            </div>
-        </section>
+  <main>
+    <!-- HERO VIDEO TIPO LEVECTOR -->
+    <section id="inicio" class="hero-video">
+      <!-- VIDEO DE FONDO -->
+      <video class="hero-video-bg" autoplay muted loop playsinline>
+        <source src="hero-mily.mp4" type="video/mp4" />
+        Tu navegador no soporta video HTML5.
+      </video>
 
-        <!-- MISIÓN -->
-        <section id="mision" class="seccion seccion-mision">
-            <div class="seccion-content">
-                <h2>NUESTRA FILOSOFÍA</h2>
-                <p class="subtitulo">Producción audiovisual con enfoque artístico, técnico y narrativo.</p>
+      <!-- DEGRADADO OSCURO -->
+      <div class="hero-video-overlay"></div>
 
-                <div class="mision-grid">
-                    <div class="mision-item">
-                        <i class="fas fa-camera-retro"></i>
-                        <h3>Cinematografía de Autor</h3>
-                        <p>
-                            Creamos proyectos con estilo propio, cuidando la composición, la luz y la narrativa visual en cada fotograma.
-                        </p>
-                    </div>
+      <!-- TEXTO ENCIMA DEL VIDEO -->
+      <div class="hero-video-content">
+        <p class="hero-video-meta">
+          AGENCIA: <span>MILY PRODUCTIONS</span>
+        </p>
+        <p class="hero-video-meta">
+          PROYECTO: <span>BALSAPAMBA · TURISMO</span>
+        </p>
 
-                    <div class="mision-item">
-                        <i class="fas fa-mountain"></i>
-                        <h3>Conocimiento de Campo</h3>
-                        <p>
-                            Dominamos la filmación en distintas locaciones y condiciones, asegurando una producción fluida, segura y bien planificada.
-                        </p>
-                    </div>
+        <h1 class="hero-video-title">
+          CREA TU<br>
+          VERSIÓN VISUAL
+        </h1>
 
-                    <div class="mision-item">
-                        <i class="fas fa-pencil-ruler"></i>
-                        <h3>Postproducción Profesional</h3>
-                        <p>
-                            Edición, corrección de color, sonido y ritmo narrativo optimizados para entregar un producto final pulido y de alto impacto visual.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <p class="hero-video-meta">
+          DIRECTOR: <span>ANGELLY LOMBEIDA</span><br>
+          CLIENTE: <span>GAD MUNICIPAL SIMÓN BOLÍVAR</span>
+        </p>
+      </div>
 
-        <!-- PORTAFOLIO -->
-        <section id="portafolio" class="seccion seccion-portafolio">
-            <div class="seccion-content">
-                <h2>PORTAFOLIO EN FOCO</h2>
-                <p class="subtitulo">Proyectos que definen nuestro sello visual.</p>
+      <!-- TEXTO "SCROLL" ABAJO -->
+      <div class="hero-video-scroll">Scroll</div>
+    </section>
 
-                <div class="portafolio-list">
-                    <!-- 01 -->
-                    <article class="project-block">
-                        <video controls preload="metadata" poster="miniaturas/corazon_subtropical.jpg">
-                            <source src="mi-video-portafolio.mp4" type="video/mp4" />
-                            Tu navegador no soporta la reproducción de video.
-                        </video>
-                        <div class="project-info">
-                            <h3>01. CORAZÓN SUBTROPICAL</h3>
-                            <p>Cortometraje con estética cinematográfica y narrativa emocional.</p>
-                            <span class="tag">Cortometraje</span>
-                            <span class="tag">Cine</span>
-                        </div>
-                    </article>
+    <!-- HERO SERVICIO: SPOTS (FONDO DESDE CSS CON img/spots.jpg) -->
+    <section id="spots-hero" class="section service-hero spots-hero">
+      <div class="section-inner service-hero-inner">
+        <p class="service-tag">SERVICIO</p>
+        <h2 class="service-hero-title">SPOTS PUBLICITARIOS</h2>
+        <p class="service-hero-text">
+          Desarrollamos spots para TV y plataformas digitales que conectan con el público desde el
+          primer segundo. Integramos guion, rodaje y postproducción para mostrar tu producto o servicio
+          de la forma más atractiva posible.
+        </p>
+        <a href="#contacto" class="btn-primary">Quiero un spot</a>
+      </div>
+    </section>
 
-                    <!-- 02 -->
-                    <article class="project-block">
-                        <video controls preload="metadata" poster="miniaturas/video_adicional_1.jpg">
-                            <source src="otro-video-1.mp4" type="video/mp4" />
-                            Tu navegador no soporta la reproducción de video.
-                        </video>
-                        <div class="project-info">
-                            <h3>02. Tradiciones Vivas</h3>
-                            <p>Documental sobre identidad cultural y costumbres locales.</p>
-                            <span class="tag">Documental</span>
-                            <span class="tag">Cultura</span>
-                        </div>
-                    </article>
+    <!-- HERO SERVICIO: CONTENIDO DIGITAL (FONDO DESDE CSS CON img/contenido-digital.jpg) -->
+    <section id="contenido-hero" class="section service-hero contenido-hero">
+      <div class="section-inner service-hero-inner">
+        <p class="service-tag">SERVICIO</p>
+        <h2 class="service-hero-title">CONTENIDO DIGITAL</h2>
+        <p class="service-hero-text">
+          Creamos piezas ágiles (reels, historias, cápsulas) pensadas para algoritmos y audiencias
+          reales. Contenido constante que mantiene tu marca presente en la mente de tu comunidad.
+        </p>
+        <a href="#planes" class="btn-primary">Ver planes</a>
+      </div>
+    </section>
 
-                    <!-- 03 -->
-                    <article class="project-block">
-                        <video controls preload="metadata" poster="miniaturas/video_adicional_2.jpg">
-                            <source src="otro-video-2.mp4" type="video/mp4" />
-                            Tu navegador no soporta la reproducción de video.
-                        </video>
-                        <div class="project-info">
-                            <h3>03. Destino Promocional</h3>
-                            <p>Campaña visual orientada al turismo y la promoción estratégica.</p>
-                            <span class="tag">Promoción</span>
-                            <span class="tag">Publicidad</span>
-                        </div>
-                    </article>
+    <!-- HERO SERVICIO: CINE Y CONTENIDO (FONDO DESDE CSS CON img/cine.jpg) -->
+    <section id="cine-hero" class="section service-hero cine-hero">
+      <div class="section-inner service-hero-inner">
+        <p class="service-tag">SERVICIO</p>
+        <h2 class="service-hero-title title-xl">CINE Y CONTENIDO</h2>
+        <p class="service-hero-text">
+          Proyectos documentales y contenidos de mediana duración, como el documental turístico de
+          Balsapamba, con investigación, narrativa y mirada cinematográfica.
+        </p>
+        <a href="#reels" class="btn-primary">Ver documental</a>
+      </div>
+    </section>
 
-                    <!-- 04 -->
-                    <article class="project-block">
-                        <video controls preload="metadata" poster="miniaturas/video_adicional_3.jpg">
-                            <source src="otro-video-3.mp4" type="video/mp4" />
-                            Tu navegador no soporta la reproducción de video.
-                        </video>
-                        <div class="project-info">
-                            <h3>04. Behind The Scenes</h3>
-                            <p>Proceso creativo y técnico detrás de cámaras.</p>
-                            <span class="tag">Detrás de cámaras</span>
-                            <span class="tag">Producción</span>
-                        </div>
-                    </article>
+    <!-- SERVICIO: POSTPRODUCCIÓN (CON IMAGEN img/FOTO 23.jpg) -->
+    <!-- HERO SERVICIO: POSTPRODUCCIÓN -->
+<section id="postpro-hero" class="service-hero postpro-hero">
+  <div class="service-hero-inner">
+    <p class="service-tag">SERVICIO</p>
 
-                    <!-- 05 -->
-                    <article class="project-block">
-                        <video controls preload="metadata" poster="miniaturas/video_adicional_4.jpg">
-                            <source src="VIDEO 2.mp4" type="video/mp4" />
-                            Tu navegador no soporta la reproducción de video.
-                        </video>
-                        <div class="project-info">
-                            <h3>05. Naturaleza Extendida</h3>
-                            <p>Piezas aéreas y terrestres con enfoque ambiental y paisajístico.</p>
-                            <span class="tag">Naturaleza</span>
-                            <span class="tag">Aéreo</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <h2 class="service-hero-title">POSTPRODUCCIÓN</h2>
 
-        <!-- PLANES (PRODUCTOS) -->
-        <section id="planes" class="seccion seccion-planes">
-            <div class="seccion-content">
-                <h2>PLANES DE PRODUCCIÓN</h2>
-                <p class="subtitulo">Opciones según tu objetivo, alcance y presupuesto.</p>
+    <p class="service-hero-text">
+      Edición profesional, corrección de color, motion graphics, animación 3D 
+      y efectos visuales que elevan cualquier proyecto a un nivel cinematográfico.
+      Transformamos tu material en un producto final con narrativa, ritmo y estética sólida.
+    </p>
 
-                <div class="planes-grid">
-                    <!-- BÁSICO -->
-                    <article class="plan-card">
-                        <h3>PACK BÁSICO</h3>
-                        <div class="precio">
-                            <span class="moneda">$</span>
-                            <span class="cantidad">60</span>
-                        </div>
-                        <p class="duracion">Contenido corto para redes sociales.</p>
-                        <ul class="caracteristicas">
-                            <li><i class="fas fa-check-circle"></i> 1 video hasta 1 minuto</li>
-                            <li><i class="fas fa-check-circle"></i> 1 locación</li>
-                            <li><i class="fas fa-check-circle"></i> Edición básica</li>
-                            <li><i class="fas fa-check-circle"></i> Formato vertical u horizontal</li>
-                        </ul>
-                        <button
-                            type="button"
-                            class="btn-principal add-to-cart"
-                            data-name="Pack Básico"
-                            data-price="60"
-                        >
-                            Agregar al carrito
-                        </button>
-                    </article>
+    <a href="#planes" class="btn-primary">VER PLANES</a>
+  </div>
+</section>
 
-                    <!-- PROFESIONAL -->
-                    <article class="plan-card destacado">
-                        <h3>PACK PROFESIONAL</h3>
-                        <div class="precio">
-                            <span class="moneda">$</span>
-                            <span class="cantidad">120</span>
-                        </div>
-                        <p class="duracion">Producción estratégica con narrativa visual.</p>
-                        <ul class="caracteristicas">
-                            <li><i class="fas fa-check-circle"></i> 2 a 3 videos</li>
-                            <li><i class="fas fa-check-circle"></i> Varias locaciones</li>
-                            <li><i class="fas fa-check-circle"></i> Storytelling + color</li>
-                            <li><i class="fas fa-check-circle"></i> Formatos para redes</li>
-                        </ul>
-                        <button
-                            type="button"
-                            class="btn-principal add-to-cart"
-                            data-name="Pack Profesional"
-                            data-price="120"
-                        >
-                            Agregar al carrito
-                        </button>
-                    </article>
+    <!-- ========== REELS ========== -->
+<section id="reels" class="reels-section">
 
-                    <!-- PREMIUM -->
-                    <article class="plan-card">
-                        <h3>PACK PREMIUM</h3>
-                        <div class="precio">
-                            <span class="moneda">$</span>
-                            <span class="cantidad">300</span>
-                        </div>
-                        <p class="duracion">Nivel cinematográfico y dirección completa.</p>
-                        <ul class="caracteristicas">
-                            <li><i class="fas fa-check-circle"></i> 4+ piezas o documental</li>
-                            <li><i class="fas fa-check-circle"></i> Guion + dirección</li>
-                            <li><i class="fas fa-check-circle"></i> Color profesional</li>
-                            <li><i class="fas fa-check-circle"></i> Flujo 4K–6K</li>
-                        </ul>
-                        <button
-                            type="button"
-                            class="btn-principal add-to-cart"
-                            data-name="Pack Premium"
-                            data-price="300"
-                        >
-                            Agregar al carrito
-                        </button>
-                    </article>
-                </div>
-            </div>
-        </section>
+  <!-- IMAGEN DE FONDO -->
+  <div class="reels-bg">
+    <!-- 👇 PON AQUÍ EL NOMBRE REAL DE TU FOTO -->
+    <img src="FOTO 24.png" alt="Fondo reels">
+  </div>
 
-        <!-- EXPERIENCIA -->
-        <section id="experiencia" class="seccion seccion-info parallax-bg">
-            <div class="seccion-content">
-                <h2>EXPERIENCIA EN CAMPO</h2>
-                <p class="subtitulo">Locaciones, recorridos, paisajes y áreas naturales.</p>
+  <!-- CONTENIDO ENCIMA DEL FONDO -->
+  <div class="reels-inner">
 
-                <div class="experiencia-grid">
-                    <!-- MAPA -->
-                    <div class="grid-item mapa-container">
-                        <h3>Mapa de Locaciones</h3>
-                        <p>Referencias generales de zonas donde se ha realizado producción audiovisual.</p>
+    <h2 class="title-xl">REELS</h2>
+    <p class="section-sub">
+      Una muestra de proyectos en turismo, emprendimientos y eventos.
+    </p>
 
-                        <div class="mapa-iframe">
-                            <iframe
-                                src="https://maps.google.com/maps?q=Balzapamba,%20Ecuador&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                width="100%"
-                                height="100%"
-                                style="border: 0"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                            ></iframe>
-                        </div>
+    <div class="reels-grid">
 
-                        <a
-                            href="https://www.google.com/maps/place/Balzapamba"
-                            target="_blank"
-                            class="btn-secundario"
-                            rel="noopener noreferrer"
-                            >Abrir en Maps</a
-                        >
-                    </div>
+     <article class="reel-card">
+  <div class="reel-video-wrapper">
+    <video class="reel-video"
+           src="videos/reel-balsapamba.mp4"
+           controls
+           playsinline></video>
+  </div>
 
-                    <!-- GALERÍA -->
-                    <div class="grid-item galeria-container">
-                        <h3>Galería de Campo</h3>
+  <p class="reel-meta">DOCUMENTAL · TURISMO</p>
+  <h3>Atractivos de Balsapamba</h3>
+  <p class="reel-desc">
+    Balnearios, ríos y gastronomía local como eje de un relato que impulsa el turismo interno.
+  </p>
+</article>
 
-                        <div class="galeria-fotos">
-                            <figure>
-                                <a href="#" onclick="openLightbox('FOTO 2.jpg', 'Piscinas y áreas recreativas'); return false;">
-                                    <img src="FOTO 2.jpg" class="foto-galeria" alt="Piscinas y toboganes" loading="lazy" />
-                                </a>
-                                <figcaption>Recreación</figcaption>
-                            </figure>
 
-                            <figure>
-                                <a href="#" onclick="openLightbox('FOTO 3.jpg', 'Vista aérea general'); return false;">
-                                    <img src="FOTO 3.jpg" class="foto-galeria" alt="Vista aérea de complejo y entorno" loading="lazy" />
-                                </a>
-                                <figcaption>Panorama</figcaption>
-                            </figure>
+     <article class="reel-card">
+  <div class="reel-video-wrapper">
+    <video class="reel-video"
+           src="img/reel-balsapamba.mp4"
+           controls
+           playsinline></video>
+  </div>
 
-                            <figure>
-                                <a href="#" onclick="openLightbox('FOTO 4.jpg', 'Sendero natural'); return false;">
-                                    <img src="FOTO 4.jpg" class="foto-galeria" alt="Sendero de piedra rodeado de vegetación" loading="lazy" />
-                                </a>
-                                <figcaption>Sendero</figcaption>
-                            </figure>
+  <p class="reel-meta">SPOTS CORTOS · EMPRENDIMIENTOS</p>
+  <h3>Productos que se ven</h3>
+  <p class="reel-desc">
+    Piezas rápidas para redes que muestran productos y servicios con estilo joven y dinámico.
+  </p>
+</article>
 
-                            <figure>
-                                <a href="#" onclick="openLightbox('FOTO 5.jpg', 'Piscina natural de río'); return false;">
-                                    <img src="FOTO 5.jpg" class="foto-galeria" alt="Piscina natural de río" loading="lazy" />
-                                </a>
-                                <figcaption>Río</figcaption>
-                            </figure>
 
-                            <figure>
-                                <a href="#" onclick="openLightbox('FOTO 6.jpg', 'Zona de salto en el río'); return false;">
-                                    <img src="FOTO 6.jpg" class="foto-galeria" alt="Salto al agua" loading="lazy" />
-                                </a>
-                                <figcaption>Salto</figcaption>
-                            </figure>
+      <article class="reel-card">
+  <div class="reel-video-wrapper">
+    <video class="reel-video"
+           src="videos/reel-eventos.mp4"
+           controls
+           playsinline></video>
+  </div>
 
-                            <figure>
-                                <a href="#" onclick="openLightbox('FOTO 7.jpg', 'Área de baño natural'); return false;">
-                                    <img src="FOTO 7.jpg" class="foto-galeria" alt="Área de baño en río" loading="lazy" />
-                                </a>
-                                <figcaption>Baño</figcaption>
-                            </figure>
+  <p class="reel-meta">EVENTOS · AFTERMOVIES</p>
+  <h3>Momentos que quedan</h3>
+  <p class="reel-desc">
+    Resúmenes audiovisuales que capturan la emoción y los momentos clave de cada evento.
+  </p>
+</article>
 
-                            <figure>
-                                <a href="#" onclick="openLightbox('FOTO 8.jpg', 'Piscinas recreativas'); return false;">
-                                    <img src="FOTO 8.jpg" class="foto-galeria" alt="Piscinas recreativas con sombrillas" loading="lazy" />
-                                </a>
-                                <figcaption>Piscinas</figcaption>
-                            </figure>
-                        </div>
 
-                        <p class="nota-galeria">Haz clic para ampliar cada imagen.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACTO (SIN FORMULARIO, SOLO INFO) -->
-        <section id="contacto" class="seccion final-cta">
-            <div class="seccion-content">
-                <h2>¿NECESITAS ALGO PERSONALIZADO?</h2>
-                <p class="subtitulo">
-                    Si tu proyecto no encaja en un pack, podemos armar una propuesta a medida.
-                </p>
-
-                <div class="contact-layout">
-                    <!-- Información -->
-                    <div class="contact-info-block">
-                        <h3>Información de Contacto</h3>
-
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <p>Email:<br /><a href="mailto:milyproductions9@gmail.com">milyproductions9@gmail.com</a></p>
-                        </div>
-
-                        <div class="info-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <p>
-                                WhatsApp:<br /><a href="https://wa.me/593993617576" target="_blank">+593 99 361 7576</a>
-                            </p>
-                        </div>
-
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Ubicación:<br />Simón Bolívar, Guayas – Ecuador</p>
-                        </div>
-
-                        <div class="social-links large-links">
-                            <a href="https://wa.me/593993617576"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://www.facebook.com/share/1ZhtNhujws/"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/mily.productions?igsh=MWRjZ3A4YnV2enI1MQ=="
-                                ><i class="fab fa-instagram"></i
-                            ></a>
-                            <a href="https://youtube.com/milysproductions"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Bloque texto proceso -->
-                    <div class="contact-form-block">
-                        <h3>Proceso de compra</h3>
-                        <p>
-                            1. Elige uno o varios planes en la sección <strong>Planes</strong> y haz clic en
-                            <em>"Agregar al carrito"</em>.<br />
-                            2. Abre el <strong>carrito</strong> desde el ícono 🛒 en la parte superior derecha.<br />
-                            3. Revisa los detalles y realiza el pago seguro mediante <strong>PayPal</strong>.<br />
-                            4. Te contactaremos por correo o WhatsApp para coordinar la producción.
-                        </p>
-                        <p class="nota-galeria">
-                            Si necesitas factura, cambios en el alcance o un contrato formal, también se puede gestionar
-                            después de la compra.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- LIGHTBOX -->
-    <div id="lightbox-modal" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <div class="lightbox-content">
-            <img id="lightbox-image" class="lightbox-image" alt="Imagen ampliada" />
-            <div id="lightbox-caption" class="lightbox-caption"></div>
-        </div>
     </div>
+  </div>
+</section>
 
-    <!-- PANEL LATERAL DEL CARRITO (CON PESTAÑAS) -->
-    <aside id="cart-panel" class="cart-panel" aria-label="Carrito de compras">
-        <div class="cart-panel-content">
-            <button class="cart-close" aria-label="Cerrar carrito">&times;</button>
+    <!-- QUIÉNES SOMOS -->
+    <section id="quienes-somos" class="section section-about">
+      <div class="section-inner">
+        <h2 class="title-xl">Quiénes somos</h2>
+        <p class="section-sub">
+          Mily Productions es una marca audiovisual emergente que combina técnica, creatividad y raíces
+          locales desde Simón Bolívar – Provincia del Guayas.
+        </p>
 
-            <div class="cart-tabs">
-                <button class="cart-tab active" data-tab="resumen">Carrito</button>
-                <button class="cart-tab" data-tab="info">Información de compra</button>
-            </div>
-
-            <!-- Pestaña 1: Resumen -->
-            <div class="cart-tab-content active" data-tab-content="resumen">
-                <h3>Carrito de compras</h3>
-                <p class="cart-empty-text">
-                    Tu carrito está vacío. Agrega un plan desde la sección <strong>Planes</strong>.
-                </p>
-                <ul id="cart-items"></ul>
-                <p class="cart-total-line">
-                    Total: $ <span id="cart-total">0.00</span> USD
-                </p>
-                <div id="paypal-button-container"></div>
-                <p class="cart-note">
-                    El pago se procesa con PayPal. Una vez confirmado, nos pondremos en contacto contigo para coordinar
-                    fechas, locaciones y detalles técnicos.
-                </p>
-            </div>
-
-            <!-- Pestaña 2: Info -->
-            <div class="cart-tab-content" data-tab-content="info">
-                <h3>¿Cómo funciona la compra?</h3>
-                <p>
-                    <strong>1.</strong> Elige uno o varios planes en la sección <strong>Planes</strong> y haz clic en
-                    <em>"Agregar al carrito"</em>.<br />
-                    <strong>2.</strong> Abre el carrito desde el ícono 🛒 en la parte superior derecha.<br />
-                    <strong>3.</strong> Revisa el detalle, ajusta la cantidad y presiona el botón de pago de
-                    <strong>PayPal</strong>.<br />
-                    <strong>4.</strong> Una vez realizado el pago, recibirás la confirmación y luego te contactaremos
-                    por <strong>WhatsApp</strong> o <strong>correo</strong> para coordinar la producción.
-                </p>
-                <p class="cart-note">
-                    Si necesitas una propuesta personalizada, factura o contrato, puedes escribirnos a
-                    <a href="mailto:milyproductions9@gmail.com">milyproductions9@gmail.com</a> o al WhatsApp
-                    <a href="https://wa.me/593993617576" target="_blank" rel="noopener noreferrer">+593 99 361 7576</a>.
-                </p>
-            </div>
+        <div class="about-grid">
+          <article class="about-item">
+            <i class="fas fa-video"></i>
+            <h3>Mirada cinematográfica</h3>
+            <p>
+              Trabajamos encuadre, luz, color y ritmo de edición para que cada pieza se sienta como cine.
+            </p>
+          </article>
+          <article class="about-item">
+            <i class="fas fa-route"></i>
+            <h3>Territorio y comunidad</h3>
+            <p>
+              Conocemos el contexto de Balsapamba y sus alrededores, lo que nos permite contar historias auténticas.
+            </p>
+          </article>
+          <article class="about-item">
+            <i class="fas fa-bullseye"></i>
+            <h3>Estrategia clara</h3>
+            <p>
+              Cada producción responde a objetivos: posicionamiento, promoción turística o difusión cultural.
+            </p>
+          </article>
         </div>
-    </aside>
+      </div>
+    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p class="creditos-footer">Angelly Lombeida | MILY PRODUCTIONS [2025]</p>
-        <p>© 2025 Mily Productions. Todos los derechos reservados.</p>
-    </footer>
+    <!-- PLANES (para carrito) -->
+    <section id="planes" class="section section-plans">
+      <div class="section-inner">
+        <h2 class="title-xl">Planes de producción</h2>
+        <p class="section-sub">
+          Elige el plan que mejor se adapta a tu proyecto y gestiona el pago mediante PayPal.
+        </p>
 
-    <!-- SDK PAYPAL (PON TU CLIENT ID REAL) -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AXxrNJ-Ka7ZBJMBiZoLEZYnjJBR9YVYI5WAmDJTDuFH8D_qczddqF1nnMndnJ0nV6_nCnDM2pHImVLf4&currency=USD"></script>
+        <div class="plans-grid">
+          <article class="plan-card">
+            <h3>Pack Básico</h3>
+            <p class="price">$60</p>
+            <p class="plan-desc">Ideal para una pieza corta de redes.</p>
+            <ul>
+              <li>1 video hasta 1 minuto</li>
+              <li>1 locación</li>
+              <li>Edición básica y musicalización</li>
+            </ul>
+            <button class="btn-primary add-to-cart" data-name="Pack Básico" data-price="60">
+              Agregar al carrito
+            </button>
+          </article>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+          <article class="plan-card plan-featured">
+            <h3>Pack Profesional</h3>
+            <p class="price">$120</p>
+            <p class="plan-desc">Pensado para campañas y lanzamientos.</p>
+            <ul>
+              <li>2 a 3 videos</li>
+              <li>Varias locaciones</li>
+              <li>Storytelling + corrección de color</li>
+            </ul>
+            <button class="btn-primary add-to-cart" data-name="Pack Profesional" data-price="120">
+              Agregar al carrito
+            </button>
+          </article>
+
+          <article class="plan-card">
+            <h3>Pack Premium</h3>
+            <p class="price">$300</p>
+            <p class="plan-desc">Producción integral con enfoque cinematográfico.</p>
+            <ul>
+              <li>3 a 5 videos</li>
+              <li>Varias locaciones + drone (si aplica)</li>
+              <li>Color y audio profesional</li>
+            </ul>
+            <button class="btn-primary add-to-cart" data-name="Pack Premium" data-price="300">
+              Agregar al carrito
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section-contact">
+      <div class="section-inner contact-grid">
+        <div>
+          <h2 class="title-xl">Contacto</h2>
+          <p class="section-sub">
+            Cuéntanos tu idea o proyecto y armamos una propuesta a medida.
+          </p>
+          <form class="contact-form">
+            <input type="text" placeholder="Nombre / marca" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea rows="4" placeholder="Cuéntanos qué quieres producir"></textarea>
+            <button type="submit" class="btn-primary">Enviar</button>
+            <p class="form-note">
+              *Formulario demostrativo. Contáctanos por correo o WhatsApp para coordinar la producción real.
+            </p>
+          </form>
+        </div>
+        <div class="contact-info">
+          <div>
+            <h3>Dirección</h3>
+            <p>Simón Bolívar · Provincia del Guayas · Ecuador</p>
+          </div>
+          <div>
+            <h3>Correo</h3>
+            <p><a href="mailto:milyproductions9@gmail.com">milyproductions9@gmail.com</a></p>
+          </div>
+          <div>
+            <h3>WhatsApp</h3>
+            <p><a href="https://wa.me/593993617576" target="_blank">+593 99 361 7576</a></p>
+          </div>
+          <div>
+            <h3>Redes</h3>
+            <p>Facebook: Mily Productions<br>Instagram: @milyproductions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CARRITO LATERAL -->
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-panel-inner">
+      <button class="cart-close" aria-label="Cerrar carrito">&times;</button>
+
+      <div class="cart-tabs">
+        <button class="cart-tab active" data-tab="resumen">Carrito</button>
+        <button class="cart-tab" data-tab="info">Info compra</button>
+      </div>
+
+      <div class="cart-tab-content active" data-tab-content="resumen">
+        <h3>Carrito de compras</h3>
+        <p class="cart-empty-text">Tu carrito está vacío.</p>
+        <ul id="cart-items" class="cart-items"></ul>
+
+        <div class="cart-total-row">
+          <span>Total:</span>
+          <span>$ <span id="cart-total">0.00</span> USD</span>
+        </div>
+
+        <div id="paypal-button-container" class="paypal-container"></div>
+      </div>
+
+      <div class="cart-tab-content" data-tab-content="info">
+        <h3>¿Cómo funciona?</h3>
+        <p>
+          1. Agrega un plan al carrito.<br>
+          2. Abre el carrito desde el ícono de la esquina superior derecha.<br>
+          3. Paga con PayPal.<br>
+          4. Te contactamos por correo o WhatsApp para coordinar la producción.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Angelly Lombeida | MILY PRODUCTIONS [2025]</p>
+    <p>© 2025 Mily Productions. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- PAYPAL SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=AXxrNJ-Ka7ZBJMBiZoLEZYnjJBR9YVYI5WAmDJTDuFH8D_qczddqF1nnMndnJ0nV6_nCnDM2pHImVLf4&currency=USD"></script>
+  <script src="script.js"></script>
 </body>
 </html>

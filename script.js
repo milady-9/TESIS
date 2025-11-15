@@ -1,271 +1,163 @@
-// =======================================================
-// NAVEGACIÓN / HEADER
-// =======================================================
-const navMenu = document.querySelector('.nav-menu');
-const menuToggle = document.querySelector('.menu-toggle');
-const header = document.querySelector('header');
-const navLinks = document.querySelectorAll('.nav-menu li a');
+let cart = [];
+let cartTotal = 0;
 
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
+document.addEventListener("DOMContentLoaded", () => {
+  // Menú móvil
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
     });
-}
 
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-        }
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => navMenu.classList.remove("open"));
     });
-});
+  }
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+  // Carrito lateral
+  const cartPanel = document.getElementById("cart-panel");
+  const cartIconBtn = document.querySelector(".cart-icon-btn");
+  const cartCloseBtn = document.querySelector(".cart-close");
+  const cartCountEl = document.getElementById("cart-count");
+  const cartItemsEl = document.getElementById("cart-items");
+  const cartTotalEl = document.getElementById("cart-total");
+  const emptyTextEl = document.querySelector(".cart-empty-text");
+
+  function openCart() {
+    if (cartPanel) cartPanel.classList.add("open");
+  }
+
+  function closeCart() {
+    if (cartPanel) cartPanel.classList.remove("open");
+  }
+
+  if (cartIconBtn) cartIconBtn.addEventListener("click", openCart);
+  if (cartCloseBtn) cartCloseBtn.addEventListener("click", closeCart);
+
+  // Tabs del carrito
+  const cartTabs = document.querySelectorAll(".cart-tab");
+  const cartTabContents = document.querySelectorAll(".cart-tab-content");
+
+  cartTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const target = tab.dataset.tab;
+
+      cartTabs.forEach(t => t.classList.remove("active"));
+      cartTabContents.forEach(c => c.classList.remove("active"));
+
+      tab.classList.add("active");
+      document
+        .querySelector(`.cart-tab-content[data-tab-content="${target}"]`)
+        .classList.add("active");
+    });
+  });
+
+  // Agregar al carrito
+  const addButtons = document.querySelectorAll(".add-to-cart");
+
+  addButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const name = btn.dataset.name;
+      const price = parseFloat(btn.dataset.price || "0");
+
+      if (!name || isNaN(price)) return;
+
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+
+      updateCartUI();
+      openCart();
+    });
+  });
+
+  function updateCartUI() {
+    // Cantidad
+    const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+    if (cartCountEl) cartCountEl.textContent = totalItems.toString();
+
+    // Lista
+    if (!cartItemsEl) return;
+    cartItemsEl.innerHTML = "";
+
+    if (cart.length === 0) {
+      if (emptyTextEl) emptyTextEl.style.display = "block";
     } else {
-        header.classList.remove('scrolled');
-    }
-});
+      if (emptyTextEl) emptyTextEl.style.display = "none";
 
-// =======================================================
-// LIGHTBOX GALERÍA
-// =======================================================
-const modal = document.getElementById('lightbox-modal');
-const modalImg = document.getElementById('lightbox-image');
-const modalCaption = document.getElementById('lightbox-caption');
+      cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span>${item.name} x${item.qty}</span>
+          <span>
+            $${(item.price * item.qty).toFixed(2)}
+            <button data-index="${index}" aria-label="Quitar del carrito">x</button>
+          </span>
+        `;
+        cartItemsEl.appendChild(li);
+      });
 
-window.openLightbox = function (src, caption) {
-    if (!modal || !modalImg || !modalCaption) return;
-    modal.style.display = 'flex';
-    modalImg.src = src;
-    modalCaption.textContent = caption || '';
-    document.body.style.overflow = 'hidden';
-};
-
-window.closeLightbox = function () {
-    if (!modal) return;
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-};
-
-if (modal) {
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal || e.target.classList.contains('lightbox-close')) {
-            closeLightbox();
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
-            closeLightbox();
-        }
-    });
-}
-
-// =======================================================
-// CARRITO + PAYPAL + PESTAÑAS
-// =======================================================
-document.addEventListener('DOMContentLoaded', () => {
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    const cartPanel = document.getElementById('cart-panel');
-    const cartToggleBtn = document.querySelector('.cart-icon-btn');
-    const cartCloseBtn = document.querySelector('.cart-close');
-    const cartItemsList = document.getElementById('cart-items');
-    const cartTotalElement = document.getElementById('cart-total');
-    const cartCountElement = document.getElementById('cart-count');
-    const cartEmptyText = document.querySelector('.cart-empty-text');
-    const paypalContainer = document.getElementById('paypal-button-container');
-
-    let cart = [];
-    let cartTotal = 0;
-
-    function updateCartCount() {
-        const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-        if (cartCountElement) {
-            cartCountElement.textContent = totalQty;
-        }
+      // Botones quitar
+      cartItemsEl.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const i = parseInt(btn.dataset.index, 10);
+          if (!isNaN(i)) {
+            cart.splice(i, 1);
+            updateCartUI();
+          }
+        });
+      });
     }
 
-    function renderCart() {
-        if (!cartItemsList || !cartTotalElement) return;
+    // Total
+    cartTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    if (cartTotalEl) cartTotalEl.textContent = cartTotal.toFixed(2);
+  }
 
-        cartItemsList.innerHTML = '';
-
-        if (cart.length === 0) {
-            if (cartEmptyText) cartEmptyText.style.display = 'block';
-            cartTotal = 0;
-            cartTotalElement.textContent = '0.00';
-        } else {
-            if (cartEmptyText) cartEmptyText.style.display = 'none';
-
-            cartTotal = 0;
-            cart.forEach((item, index) => {
-                cartTotal += item.price * item.quantity;
-
-                const li = document.createElement('li');
-                li.classList.add('cart-item-row');
-                li.innerHTML = `
-                    <div class="cart-item-main">
-                        <span class="cart-item-name">${item.name}</span>
-                        <span class="cart-item-price">$ ${item.price.toFixed(2)} USD</span>
-                    </div>
-                    <div class="cart-item-controls">
-                        <button type="button" class="cart-btn cart-decrease" data-index="${index}">−</button>
-                        <span class="cart-item-qty">${item.quantity}</span>
-                        <button type="button" class="cart-btn cart-increase" data-index="${index}">+</button>
-                        <button type="button" class="cart-btn cart-remove" data-index="${index}">Quitar</button>
-                    </div>
-                    <div class="cart-item-subtotal">
-                        Subtotal: $ ${(item.price * item.quantity).toFixed(2)}
-                    </div>
-                `;
-                cartItemsList.appendChild(li);
+  // PAYPAL
+  if (window.paypal) {
+    try {
+      window.paypal
+        .Buttons({
+          style: {
+            layout: "vertical",
+            color: "gold",
+            shape: "rect",
+            label: "paypal",
+          },
+          createOrder: function (data, actions) {
+            const amount = cartTotal > 0 ? cartTotal.toFixed(2) : "0.01"; // mínimo
+            return actions.order.create({
+              purchase_units: [
+                {
+                  amount: {
+                    value: amount,
+                    currency_code: "USD",
+                  },
+                  description: "Planes Mily Productions",
+                },
+              ],
             });
-
-            cartTotalElement.textContent = cartTotal.toFixed(2);
-        }
-
-        updateCartCount();
+          },
+          onApprove: function (data, actions) {
+            return actions.order.capture().then(function () {
+              alert("¡Pago realizado con éxito! Nos pondremos en contacto contigo.");
+              cart = [];
+              updateCartUI();
+            });
+          },
+          onError: function (err) {
+            console.error("Error PayPal:", err);
+          },
+        })
+        .render("#paypal-button-container");
+    } catch (e) {
+      console.error("No se pudo inicializar PayPal:", e);
     }
-
-    function addToCart(name, price) {
-        price = parseFloat(price);
-        if (isNaN(price)) return;
-
-        const existing = cart.find(item => item.name === name);
-        if (existing) {
-            existing.quantity += 1;
-        } else {
-            cart.push({ name, price, quantity: 1 });
-        }
-        renderCart();
-    }
-
-    // Botones "Agregar al carrito"
-    addToCartButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const name = btn.getAttribute('data-name');
-            const price = btn.getAttribute('data-price');
-            addToCart(name, price);
-
-            // Abrir carrito automáticamente
-            if (cartPanel) {
-                cartPanel.classList.add('open');
-                document.body.classList.add('cart-open');
-            }
-        });
-    });
-
-    // Abrir / cerrar panel de carrito
-    if (cartToggleBtn && cartPanel) {
-        cartToggleBtn.addEventListener('click', () => {
-            cartPanel.classList.toggle('open');
-            document.body.classList.toggle('cart-open');
-        });
-    }
-
-    if (cartCloseBtn && cartPanel) {
-        cartCloseBtn.addEventListener('click', () => {
-            cartPanel.classList.remove('open');
-            document.body.classList.remove('cart-open');
-        });
-    }
-
-    // Cerrar carrito con Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && cartPanel && cartPanel.classList.contains('open')) {
-            cartPanel.classList.remove('open');
-            document.body.classList.remove('cart-open');
-        }
-    });
-
-    // Delegación en items del carrito (aumentar, disminuir, quitar)
-    if (cartItemsList) {
-        cartItemsList.addEventListener('click', (e) => {
-            const index = e.target.getAttribute('data-index');
-            if (index === null) return;
-
-            const i = parseInt(index);
-            if (isNaN(i) || !cart[i]) return;
-
-            if (e.target.classList.contains('cart-increase')) {
-                cart[i].quantity += 1;
-            } else if (e.target.classList.contains('cart-decrease')) {
-                cart[i].quantity -= 1;
-                if (cart[i].quantity <= 0) {
-                    cart.splice(i, 1);
-                }
-            } else if (e.target.classList.contains('cart-remove')) {
-                cart.splice(i, 1);
-            }
-
-            renderCart();
-        });
-    }
-
-    // PAYPAL
-    if (paypalContainer && typeof paypal !== 'undefined') {
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                if (cart.length === 0 || cartTotal <= 0) {
-                    alert('Tu carrito está vacío. Agrega al menos un plan antes de pagar.');
-                    return;
-                }
-
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: cartTotal.toFixed(2)
-                        },
-                        description: 'Servicios de producción audiovisual - Mily Productions'
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    alert('Pago completado por ' + details.payer.name.given_name + '. ¡Gracias por tu confianza!');
-
-                    cart = [];
-                    renderCart();
-                });
-            },
-            onError: function(err) {
-                console.error('Error en el pago:', err);
-                alert('Ocurrió un error al procesar el pago. Inténtalo nuevamente o contáctanos.');
-            }
-        }).render('#paypal-button-container');
-    } else if (paypalContainer) {
-        console.warn('PayPal SDK no está disponible. Verifica el Client ID en el script.');
-    }
-
-    // =======================================================
-    // PESTAÑAS DENTRO DEL CARRITO
-    // =======================================================
-    const cartTabs = document.querySelectorAll('.cart-tab');
-    const cartTabContents = document.querySelectorAll('.cart-tab-content');
-
-    function activateCartTab(tabName) {
-        cartTabs.forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-tab') === tabName);
-        });
-        cartTabContents.forEach(content => {
-            content.classList.toggle(
-                'active',
-                content.getAttribute('data-tab-content') === tabName
-            );
-        });
-    }
-
-    cartTabs.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tabName = btn.getAttribute('data-tab');
-            activateCartTab(tabName);
-        });
-    });
-
-    // Render inicial
-    renderCart();
+  }
 });
